@@ -7,6 +7,9 @@ app_urluth = Blueprint("app_urluth", __name__)
 
 # REC TODO : mettre ça dans un fichier de config
 #TEMPLATE_FILE_PATH = "urluth" + os.sep + "template.html"
+# non. Il faut utiliser les templates, comme tout le monde.
+# http://flask.pocoo.org/docs/0.11/api/#flask.render_template
+# http://flask.pocoo.org/docs/0.11/blueprints/
 TEMPLATE_FILE_PATH = "/home/Recher/mysite/urluth/template.html"
 
 FINAL_URL_TEXT_ID = "{{final_url}}"
