@@ -1,0 +1,247 @@
+﻿<html>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <meta name="adbit-site-verification" content="8844b9f937c9c2d0a196f3d1e3775f524593b6f4ba886b4bddd4d353cd65af36" />
+
+  <style>
+
+    body {
+        width: 100%; margin: 0; font-size: 1em; background-color: #000;
+    }
+    .lang-button-placement {
+        float:right; display:inline; margin: 5px;
+    }
+    .horizontal-bar {
+        width: 100%; height: 5px; background-color: #B8BABB;
+    }
+    .ad-placement {
+        float:left; display:inline; width: 49%;
+    }
+    .clear-both {
+        clear: both;
+    }
+    p {
+        color: #B8BABB; font-size: 1.5em; padding-left: 10px;
+    }
+    .no-big-text {
+        font-size: 1em;
+    }
+    .emphasized-text {
+        text-align:center; font-size: 3em;
+    }
+    a, a:visited {
+        color: #7F8E91; text-decoration: underline;
+    }
+    a:hover, a:active {
+        color: #81C8D5; text-decoration: underline;
+    }
+    .clickable:hover {
+        cursor:pointer;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="lang-button-placement">
+    <img src="img/drapalfr.png" width="38" id="flag-fr" class="clickable">
+    <img src="img/drapalen.png" width="38" id="flag-en" class="clickable">
+  </div>
+  <div class="clear-both">
+    <p id="text-here-is-link">
+      {{here_is_link_fr}}
+    </p>
+    <div class="emphasized-text">
+      <a href="{{final_url}}">{{final_url}}</a>
+    </div>
+    <br/>
+    <p>
+      <span id="text-countdown-before">
+        Vous pouvez cliquer dessus ou attendre
+      </span>
+      <span id="text-countdown" class="clickable">
+        50
+      </span>
+      <span id="text-countdown-after">
+        secondes pour une redirection automatique.
+      </span>
+    </p>
+    <br/>
+  </div>
+  <div class="horizontal-bar"></div>
+  <div>
+    <p id="text-ads-ftw">
+      Et voici de la publicité stupide. Ha ha ha !
+      Je n'ai pas honte de contribuer au moisissement de votre cerveau !
+    </p>
+    <br/>
+  </div>
+
+  <!-- il ne faut pas ajouter de sauts de ligne ni d'espaces à l'intérieur
+       des textes de pub, sinon leur crétin de serveur ne veut pas les valider
+   -->
+  <div class="ad-placement">
+    <iframe data-aa='273455' src='https://ad.a-ads.com/273455?size=468x60' scrolling='no' style='width:468px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true' frameborder='0'></iframe>
+  </div>
+  <div class="ad-placement">
+    <center>
+      <div>
+        <iframe scrolling="no" src="//blockadz.com/ads/show/show.php?a=E1GPX7V6IJNOA&b=7WVAHMEV3AEJJ" style="overflow:hidden;width:468px;height:60px;" frameborder="0"></iframe>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://blockadz.com/?a=BuyAds&id=E1GPX7V6IJNOA" target="_blank">Advertise in this spot</a>
+      </div>
+    </center>
+  </div>
+  <br/>
+  <div class="ad-placement">
+    <center>
+      <div>
+        <iframe scrolling="no" src="//blockadz.com/ads/show/show.php?a=E1GPX7V6IJNOA&b=HYXVT2VFEZD35" style="overflow:hidden;width:300px;height:250px;" frameborder="0"></iframe>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://blockadz.com/?a=BuyAds&id=E1GPX7V6IJNOA" target="_blank">Advertise in this spot</a>
+      </div>
+    </center>
+  </div>
+  <div class="ad-placement">
+    <iframe data-aa='143164' src='https://ad.a-ads.com/143164?size=300x250' scrolling='no' style='width:300px; height:250px; border:0px; padding:0;overflow:hidden' allowtransparency='true' frameborder='0'></iframe>
+  </div>
+  <br/>
+  <div class="ad-placement">
+    <div class="adbit-display-ad" data-adspace-id="754F5AE8F1"></div>
+  </div>
+  <div class="ad-placement">
+    <iframe src="http://coinhits.com/ad/pbnr2.php?ref=563" marginwidth="0" marginheight="0" width="468" height="60" scrolling="no" border="0" frameborder="0"></iframe>
+  </div>
+  <br/>
+  <div class="ad-placement">
+    <iframe src="http://coinmedia.co/new_code_site23973.js" scrolling="no" frameborder="0" width="468px" height="90px"></iframe>
+  </div>
+
+  <div class="clear-both">
+    <br/>
+    <p class="no-big-text">
+      <span id="text-urluth-credits">
+        Urluth. Service ego-centré de brouzoufisation de liens sur un terre-net.
+      </span>
+      <a href="http://cur.lv/yns">recher.wordpress.com, via coinUrl.</a>
+    </p>
+  </div>
+
+  <script>
+
+    // Gestion du changement de la langue français/anglais
+
+    function change_lang(language)
+    {
+        dict_fr = [
+            ["text-here-is-link", "{{here_is_link_fr}}"],
+            ["text-countdown-before", "Vous pouvez cliquer dessus ou attendre "],
+            ["text-countdown-after", " secondes pour être automatiquement redirigé."],
+            ["text-ads-ftw", "Et voici de la publicité stupide. Ha ha ha ! " +
+                             "Je n'ai pas honte de contribuer au moisissement de votre cerveau !"],
+            ["text-urluth-credits", "Urluth. Service ego-centré de brouzoufisation de liens sur un terre-net. "],
+        ];
+        dict_en = [
+            ["text-here-is-link", "{{here_is_link_en}}"],
+            ["text-countdown-before", "Click it or wait "],
+            ["text-countdown-after", " seconds to be redirected."],
+            ["text-ads-ftw", "And here are some crappy ads. " +
+                             "Not ashamed for the rotting of your brain !"],
+            ["text-urluth-credits", "Urluth. Ego-centralized links ka-ching-ka-chinging service in ter-net. "],
+        ];
+        if (language == "en") {
+            dict_chosen_lang = dict_en;
+        }
+        else
+        {
+            dict_chosen_lang = dict_fr;
+        }
+        for (var i=0 ; i<dict_chosen_lang.length ; i++)
+        {
+            id_elem_to_change = dict_chosen_lang[i][0];
+            new_text = dict_chosen_lang[i][1];
+            elem_to_change = document.getElementById(id_elem_to_change);
+            elem_to_change.innerHTML = new_text;
+        }
+    }
+
+    var elem_flag_fr = document.getElementById("flag-fr");
+    elem_flag_fr.addEventListener("click", function() {
+        change_lang("fr");
+    });
+
+    var elem_flag_en = document.getElementById("flag-en");
+    elem_flag_en.addEventListener("click", function() {
+        change_lang("en");
+    });
+
+    // Détermination initiale de la langue français/étranger
+    // http://stackoverflow.com/questions/1043339/javascript-for-detecting-browser-language-preference/4079798#4079798
+
+    function is_browser_french()
+    {
+        var language = window.navigator.userLanguage ||
+                       window.navigator.language;
+        language_splitted = language.split("-");
+        for (var i=0 ; i<language_splitted.length ; i++)
+        {
+            var language_part = language_splitted[i];
+            if ((language_part == "fr") || (language_part == "FR"))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    if (is_browser_french())
+    {
+        change_lang("fr");
+    }
+    else
+    {
+        change_lang("en");
+    }
+
+    // Décompte du temps et redirection automatique
+
+    seconds_left = 50;
+
+    function redirection_countdown()
+    {
+        seconds_left -= 10;
+        var elem_to_change = document.getElementById("text-countdown");
+        elem_to_change.innerHTML = seconds_left.toString();
+        if (seconds_left == 0)
+        {
+            clearInterval(periodic_exec_redirection);
+            // http://stackoverflow.com/questions/503093/how-can-i-make-a-redirect-page-using-jquery#506004
+            window.location.href = "{{final_url}}";
+        }
+    }
+
+    periodic_exec_redirection = setInterval(redirection_countdown, 10000);
+
+    // Arrêt du décompte du temps si on clique sur les secondes restantes.
+
+    var elem_text_countdown = document.getElementById("text-countdown");
+    elem_text_countdown.addEventListener("click", function() {
+        clearInterval(periodic_exec_redirection);
+        var elem_to_change = document.getElementById("text-countdown");
+        elem_to_change.innerHTML = "+oo";
+    });
+
+  </script>
+
+  <script type="text/javascript" src="https://adbit.co/js/show_ads.js"></script>
+
+</body>
+
+</html>
