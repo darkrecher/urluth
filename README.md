@@ -30,3 +30,14 @@ RECTODO : doc de conception, mais très rapide.
 
 RECTODO : voir si y'a pas de la doc que j'ai laissé et qu'il faudrait mettre dans ce repo.
 
+
+RECTODO : remplacer le signe "+oo"
+
+RECTODO : mettre la première ligne de texte et les drapeaux sur la même ligne,
+
+RECTODO : pour avoir un peu plus de place pour foutre des bannières 468*60.
+
+RECTODO : pré-indiquer la taille de la pub adbits, pour pas flinguer la mise en page.
+
+RECTODO : Essayer d'arranger les pubs, c'est disposé tout bizarrement et je sais pas pourquoi.
+
