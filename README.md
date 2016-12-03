@@ -1,6 +1,6 @@
 # Urluth
 
-## Objectif (urluthilité)
+## Objectif (urluthilité de ce projet)
 
 Il s'agit d'un site permettant de monétiser des urls avec de la publicité.
 
@@ -10,6 +10,11 @@ Par exemple :
 http://recher.pythonanywhere.com/urluth/?u=ad
 
 Cette adresse mène vers le site urluth qui sert d'intermédiaire. La page affiché contient le lien final, ainsi que de la publicité. L'utilisateur peut regarder et cliquer sur cet pubs (bref, on lui prend un petit morceau de son cerveau). Ensuite il peut aller vers le lien final, soit en cliquant dessus, soit en attendant quelques secondes (redirection automatique).
+
+Dans la version actuelle du projet, toutes les publicités affichées permettent de me faire gagner des bitcoins, il n'y a pas d'autres monnaies utilisée. Rien ne vous empêche, bien entendu, de forker le projet et de mettre vos publicités à vous, gérées par n'importe quelle site, avec n'importe quelle monnaie.
+
+Ce site effectue la même tâche (en moins bien) que coinUrl. J'ai souhaité me faire une alternative à coinUrl car ils sont lent à envoyer les bitcoins que je gagne chez eux, qu'ils n'ont jamais répondu à ma demande de support, et qu'ils m'avaient accidentellement banni. Pour plus de détails, : https://recher.wordpress.com/2016/01/27/coinurl-mmmppfffeeeuaarrgh/
+
 
 
 RECTODO : écrire un vrai readme : ça fait quoi. lien avec mon article de blog. mélange des deux apps. lien vers l'autre repo (qu'existe pas encore).
