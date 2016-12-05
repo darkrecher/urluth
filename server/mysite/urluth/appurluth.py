@@ -1,15 +1,15 @@
 import os
-from flask import Blueprint, request
+from flask import Blueprint, request, render_template
 from .build_dict_urls import final_urls_from_key_urls
 
 # http://stackoverflow.com/questions/15231359/split-python-flask-app-into-multiple-files
-app_urluth = Blueprint("app_urluth", __name__)
-
-# REC TODO : mettre ça dans un fichier de config
-#TEMPLATE_FILE_PATH = "urluth" + os.sep + "template.html"
-# non. Il faut utiliser les templates, comme tout le monde.
+# Il faut utiliser les templates html, comme tout le monde.
 # http://flask.pocoo.org/docs/0.11/api/#flask.render_template
 # http://flask.pocoo.org/docs/0.11/blueprints/
+app_urluth = Blueprint("app_urluth", __name__, template_folder='templates')
+
+# RECTODO : on aura bientôt plus besoin de ça.
+#TEMPLATE_FILE_PATH = "urluth" + os.sep + "template.html"
 TEMPLATE_FILE_PATH = "/home/Recher/mysite/urluth/template.html"
 # RECTODO : debug. Serveur local.
 TEMPLATE_FILE_PATH = 'C:\\Recher\\git\\urluth\\server\\mysite\\urluth\\template.html'
@@ -61,6 +61,9 @@ tplh_key_found, tplh_key_not_found = init_templates_html()
 
 @app_urluth.route('/',  methods=["GET"])
 def urluthGet():
+
+    # RECTODO : ça, ça marche. Maintenant faut mettre un vrai template.
+    return render_template('rectodo.html')
 
     key_url = request.args.get("u", "")
     if not key_url.isalnum():
