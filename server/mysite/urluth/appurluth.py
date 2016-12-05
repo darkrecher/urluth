@@ -11,6 +11,8 @@ app_urluth = Blueprint("app_urluth", __name__)
 # http://flask.pocoo.org/docs/0.11/api/#flask.render_template
 # http://flask.pocoo.org/docs/0.11/blueprints/
 TEMPLATE_FILE_PATH = "/home/Recher/mysite/urluth/template.html"
+# RECTODO : debug. Serveur local.
+TEMPLATE_FILE_PATH = 'C:\\Recher\\git\\urluth\\server\\mysite\\urluth\\template.html'
 
 FINAL_URL_TEXT_ID = "{{final_url}}"
 

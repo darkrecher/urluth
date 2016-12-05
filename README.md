@@ -19,8 +19,6 @@ Ce site effectue la même tâche (en moins bien) que coinUrl. J'ai souhaité me 
 
 RECTODO : écrire un vrai readme : ça fait quoi. lien avec mon article de blog. mélange des deux apps. lien vers l'autre repo (qu'existe pas encore).
 
-RECTODO : mettre des try except lors du chargement des deux apps (urluth et expressionontron).
-
 RECTODO : exporter/écrire/screenshotter la config de pythonanywhere
 
 RECTODO : utiliser les templates. Voir `appurluth.py`
