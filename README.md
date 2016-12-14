@@ -60,9 +60,9 @@ J'accepte les dons en diverses crypto-monnaies.
 
 ## Restant à faire
 
-RECTODO : exporter/écrire/screenshotter la config de pythonanywhere
+RECTODO : on devrait pas templatiser du code javascript. C'est bizarre.
 
-RECTODO : utiliser les templates. Voir `appurluth.py`
+RECTODO : exporter/écrire/screenshotter la config de pythonanywhere
 
 RECTODO : mettre la secret key dans le .profile. Vérifier qu'on peut bien la récupérer.
 
@@ -76,11 +76,10 @@ RECTODO : voir si y'a pas de la doc que j'ai laissé et qu'il faudrait mettre da
 
 RECTODO : remplacer le signe "+oo"
 
-RECTODO : mettre la première ligne de texte et les drapeaux sur la même ligne,
+RECTODO : changer les guillemets double en simple, partout où il faut.
 
-RECTODO : pour avoir un peu plus de place pour foutre des bannières 468*60.
+RECTODO : mettre la première ligne de texte et les drapeaux sur la même ligne, pour avoir un peu plus de place pour foutre des bannières 468*60.
 
 RECTODO : pré-indiquer la taille de la pub adbits, pour pas flinguer la mise en page.
 
-RECTODO : Essayer d'arranger les pubs, c'est disposé tout bizarrement et je sais pas pourquoi.
-
+RECTODO : revérifier les TODO restants dans le code. Mais normalement y'a plus.

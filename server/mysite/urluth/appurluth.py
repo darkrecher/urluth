@@ -13,8 +13,6 @@ app_urluth = Blueprint("app_urluth", __name__, template_folder='templates')
 # http://flask.pocoo.org/snippets/57/
 # Mais là c'est pas ça que je veux faire.
 
-# RECTODO : changer les guillemets double en simple, partout où il faut.
-
 @app_urluth.route('/',  methods=["GET"])
 def urluthGet():
 
