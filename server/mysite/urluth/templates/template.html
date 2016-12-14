@@ -41,6 +41,9 @@
     .clickable:hover {
         cursor:pointer;
     }
+    .hidden {
+      display: none;
+    }
 
   </style>
 
@@ -55,32 +58,38 @@
     <img src="img/drapalfr.png" width="38" id="flag-fr" class="clickable">
     <img src="img/drapalen.png" width="38" id="flag-en" class="clickable">
   </div>
+
   <div class="clear-both">
-    <p id="text-here-is-link">
-      {{here_is_link_fr}}
-    </p>
+
+    <p class="lang-fr">{{here_is_link_fr}}</p>
+    <p class="lang-en hidden">{{here_is_link_en}}</p>
     <div class="emphasized-text">
       <a href="{{final_url}}">{{final_url}}</a>
     </div>
     <br/>
+
     <p>
-      <span id="text-countdown-before">
-        Vous pouvez cliquer dessus ou attendre
-      </span>
+      <span class="lang-fr">Vous pouvez cliquer dessus ou attendre </span>
+      <span class="lang-en hidden">Click it or wait </span>
       <span id="text-countdown" class="clickable">
         50
       </span>
-      <span id="text-countdown-after">
-        secondes pour une redirection automatique.
-      </span>
+      <span class="lang-fr"> secondes pour une redirection automatique.</span>
+      <span class="lang-en hidden"> seconds to be redirected.</span>
     </p>
     <br/>
+
   </div>
+
   <div class="horizontal-bar"></div>
   <div>
-    <p id="text-ads-ftw">
+    <p class="lang-fr">
       Et voici de la publicité stupide. Ha ha ha !
       Je n'ai pas honte de contribuer au moisissement de votre cerveau !
+    </p>
+    <p class="lang-en hidden">
+      And here are some crappy ads.
+      Not ashamed for the rotting of your brain !
     </p>
     <br/>
   </div>
@@ -148,8 +157,11 @@
   <div class="clear-both">
     <br/>
     <p class="no-big-text">
-      <span id="text-urluth-credits">
+      <span class="lang-fr">
         Urluth. Service ego-centré de brouzoufisation de liens sur un terre-net.
+      </span>
+      <span class="lang-en hidder">
+        Urluth. Ego-centralized links ka-ching-ka-chinging service in ter-net.
       </span>
       <a href="http://cur.lv/yns">recher.wordpress.com, via coinUrl.</a>
     </p>
@@ -163,36 +175,33 @@
 
     function change_lang(language)
     {
-        dict_fr = [
-            ["text-here-is-link", "{{here_is_link_fr}}"],
-            ["text-countdown-before", "Vous pouvez cliquer dessus ou attendre "],
-            ["text-countdown-after", " secondes pour être automatiquement redirigé."],
-            ["text-ads-ftw", "Et voici de la publicité stupide. Ha ha ha ! " +
-                             "Je n'ai pas honte de contribuer au moisissement de votre cerveau !"],
-            ["text-urluth-credits", "Urluth. Service ego-centré de brouzoufisation de liens sur un terre-net. "],
-        ];
-        dict_en = [
-            ["text-here-is-link", "{{here_is_link_en}}"],
-            ["text-countdown-before", "Click it or wait "],
-            ["text-countdown-after", " seconds to be redirected."],
-            ["text-ads-ftw", "And here are some crappy ads. " +
-                             "Not ashamed for the rotting of your brain !"],
-            ["text-urluth-credits", "Urluth. Ego-centralized links ka-ching-ka-chinging service in ter-net. "],
-        ];
+        var classes_en;
+        var classes_fr;
         if (language == "en") {
-            dict_chosen_lang = dict_en;
+            classes_en = "lang-en";
+            classes_fr = "lang-fr hidden";
         }
         else
         {
-            dict_chosen_lang = dict_fr;
+            classes_en = "lang-en hidden";
+            classes_fr = "lang-fr";
         }
-        for (var i=0 ; i<dict_chosen_lang.length ; i++)
+
+        // http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript
+        // C'est moche, car je redéfinis toutes les classes au lieu de juste enlever/ajouter le hidden.
+        // Mais je veux pas me prendre la tête avec du code compliqué de regex ou de jquery.
+        // C'est pas non plus le projet du siècle.
+        var texts_en = document.getElementsByClassName("lang-en");
+        for (var i=0; i<texts_en.length; i++)
         {
-            id_elem_to_change = dict_chosen_lang[i][0];
-            new_text = dict_chosen_lang[i][1];
-            elem_to_change = document.getElementById(id_elem_to_change);
-            elem_to_change.innerHTML = new_text;
+            texts_en[i].className = classes_en;
         }
+        var texts_fr = document.getElementsByClassName("lang-fr");
+        for (var i=0; i<texts_fr.length; i++)
+        {
+            texts_fr[i].className = classes_fr;
+        }
+
     }
 
     var elem_flag_fr = document.getElementById("flag-fr");
