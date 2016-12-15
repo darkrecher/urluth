@@ -62,7 +62,8 @@ function is_browser_french()
 
 if (is_browser_french())
 {
-    change_lang("fr");
+    // Pas besoin de changer la langue vers le français. C'est la langue par défaut.
+    //change_lang("fr");
 }
 else
 {
@@ -81,8 +82,10 @@ function redirection_countdown()
     if (seconds_left == 0)
     {
         clearInterval(periodic_exec_redirection);
+        var link_node = document.getElementById("final-url");
+        var final_url = link_node.getAttribute("href");
         // http://stackoverflow.com/questions/503093/how-can-i-make-a-redirect-page-using-jquery#506004
-        window.location.href = "{{final_url}}";
+        window.location.href = final_url;
     }
 }
 
