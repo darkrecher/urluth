@@ -173,4 +173,11 @@ ie    https://github.com/figlief/kp-atomix
 if    http://blog.draknek.org/post/93360531842/if-i-wanted-to-clone-atomix-this-is-where-id
 ig    https://fr.xhamster.com/movies/4744032/bbw_cc_and_friend_deepthroat_dildos_3.html
 
+ja    http://www.funnyjunk.com/Sex+ed+for+kids/funny-pictures/5546690/73#73
+jb    http://www.funnyordie.com/lists/30868d6681/gif-guide-clapping?_cc=__d___&_ccid=f65947c1-fdf1-4803-a612-98bbda7edda2
+jc    http://theridgewoodblog.net/full-day-kindergarten-great-but-costly-idea/
+jd    https://www.vporn.com/bbw/cotton-candi-detention/570364/
+je    http://www.gamekult.com/jeux/image-stellar-overload-SU3050244235-ME3050779075i.html
+jf    https://github.com/malko/cpold
+
 """
