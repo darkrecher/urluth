@@ -9,40 +9,63 @@
   <style>
 
     body {
-        width: 100%; margin: 0; font-size: 1em; background-color: #000;
+        width: 100%;
+        margin: 0;
+        font-size: 1em;
+        background-color: #000;
     }
-    .lang-button-placement {
-        float:right; display:inline; margin: 5px;
+    p {
+        color: #B8BABB;
+        font-size: 1.5em;
+        padding-left: 10px;
     }
-    .horizontal-bar {
-        width: 100%; height: 5px; background-color: #B8BABB;
+    a,
+    a:visited {
+        color: #7F8E91;
+        text-decoration: underline;
     }
-    .ad-placement {
-        float:left; display:inline; width: 49%;
+    a:hover,
+    a:active {
+        color: #81C8D5;
+        text-decoration: underline;
+    }
+    .hidden {
+        display: none;
     }
     .clear-both {
         clear: both;
     }
-    p {
-        color: #B8BABB; font-size: 1.5em; padding-left: 10px;
+    .clickable: hover {
+        cursor: pointer;
+    }
+    .horizontal-bar {
+        width: 100%;
+        height: 5px;
+        background-color: #B8BABB;
+    }
+    .emphasized-text {
+        text-align: center;
+        font-size: 3em;
     }
     .no-big-text {
         font-size: 1em;
     }
-    .emphasized-text {
-        text-align:center; font-size: 3em;
+    .intro-phrase-placement {
+        float: left;
+        display: inline;
     }
-    a, a:visited {
-        color: #7F8E91; text-decoration: underline;
+    .intro-phrase-margin {
+        margin: 0;
     }
-    a:hover, a:active {
-        color: #81C8D5; text-decoration: underline;
+    .lang-button-placement {
+        float: right;
+        display: inline;
+        margin: 5px;
     }
-    .clickable:hover {
-        cursor:pointer;
-    }
-    .hidden {
-      display: none;
+    .ad-placement {
+        float: left;
+        display: inline;
+        width: 49%;
     }
 
   </style>
@@ -54,15 +77,21 @@
   <!-- +++++++++++++++ Haut de page +++++++++++++++ -->
   <!-- Boutons de changement de langue, lien principal, affichage décompte avant redirection. -->
 
+  <div class="clear-both">
+
+  <div class="intro-phrase-placement">
+    <p class="lang-fr intro-phrase-margin">{{here_is_link_fr}}</p>
+    <p class="lang-en intro-phrase-margin hidden">{{here_is_link_en}}</p>
+  </div>
+
   <div class="lang-button-placement">
-    <img src="img/drapalfr.png" width="38" id="flag-fr" class="clickable">
-    <img src="img/drapalen.png" width="38" id="flag-en" class="clickable">
+    <img src="img/drapalfr.png" width="38" height="28" id="flag-fr" class="clickable">
+    <img src="img/drapalen.png" width="38" height="28" id="flag-en" class="clickable">
+  </div>
   </div>
 
   <div class="clear-both">
 
-    <p class="lang-fr">{{here_is_link_fr}}</p>
-    <p class="lang-en hidden">{{here_is_link_en}}</p>
     <div class="emphasized-text">
       <a id="final-url" href="{{final_url}}">{{final_url}}</a>
     </div>
@@ -146,7 +175,7 @@
   <br/>
 
   <div class="clear-both">
-    <div class="ad-placement">
+    <div class="ad-placement" style="width:468px; height:60px;">
       <div class="adbit-display-ad" data-adspace-id="754F5AE8F1"></div>
     </div>
   </div>

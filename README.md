@@ -60,26 +60,8 @@ J'accepte les dons en diverses crypto-monnaies.
 
 ## Restant à faire
 
-RECTODO : on devrait pas templatiser du code javascript. C'est bizarre.
-
 RECTODO : exporter/écrire/screenshotter la config de pythonanywhere
-
-RECTODO : mettre la secret key dans le .profile. Vérifier qu'on peut bien la récupérer.
-
-RECTODO : virer le main de `build_dict_urls.py`. De toutes façons c'est pas comme ça qu'on fait. Il faut qu'un seul point d'entrée. Et vu que ce main ne contient pas de vrais tests. Autant le virer complètement.
 
 RECTODO : doc d'installation dans pythonanywhere, et éventuellement de test en local.
 
-RECTODO : doc de conception, mais très rapide.
-
-RECTODO : voir si y'a pas de la doc que j'ai laissé et qu'il faudrait mettre dans ce repo.
-
-RECTODO : remplacer le signe "+oo"
-
-RECTODO : changer les guillemets double en simple, partout où il faut.
-
-RECTODO : mettre la première ligne de texte et les drapeaux sur la même ligne, pour avoir un peu plus de place pour foutre des bannières 468*60.
-
-RECTODO : pré-indiquer la taille de la pub adbits, pour pas flinguer la mise en page.
-
-RECTODO : revérifier les TODO restants dans le code. Mais normalement y'a plus.
+RECTODO : doc de conception, mais très rapide. (expliquer le coup de la secret key)
