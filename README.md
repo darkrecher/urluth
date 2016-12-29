@@ -65,5 +65,3 @@ RECTODO : exporter/écrire/screenshotter la config de pythonanywhere
 RECTODO : doc d'installation dans pythonanywhere, et éventuellement de test en local.
 
 RECTODO : doc de conception, mais très rapide. (expliquer le coup de la secret key)
-
-RECTODO : revérifier les TODO restants dans le code. Mais normalement y'a plus.

@@ -13,6 +13,22 @@ app_urluth = Blueprint('app_urluth', __name__, template_folder='templates')
 # http://flask.pocoo.org/snippets/57/
 # Mais là c'est pas ça que je veux faire.
 
+DICT_PARAMS_URL_OK = {
+    'here_is_link_fr':
+    "Voici le lien qui vous intéresse :",
+
+    'here_is_link_en':
+    "Here is the desired link :",
+}
+
+DICT_PARAMS_URL_NOT_FOUND = {
+    'here_is_link_fr':
+    "Désolé, le lien que vous voulez est introuvable. En voici un autre :",
+
+    'here_is_link_en':
+    "Sorry, your link can not be found. Here is another one :",
+}
+
 @app_urluth.route('/',  methods=['GET'])
 def urluthGet():
 
@@ -23,15 +39,10 @@ def urluthGet():
          final_url = final_urls_from_key_urls.get(key_url)
 
     if final_url is None:
-        # RECTODO : foutre les dicos en constante. Comme c'était avant en fait.
-        params_template = {
-            'here_is_link_fr': "Désolé, le lien que vous voulez est introuvable. En voici un autre :",
-            'here_is_link_en': "Sorry, your link can not be found. Here is another one :",
-            'final_url': 'http://recher.wordpress.com', }
+        params_template = DICT_PARAMS_URL_NOT_FOUND
+        params_template['final_url'] = 'http://recher.wordpress.com'
     else:
-        params_template = {
-            'here_is_link_fr': "Voici le lien qui vous intéresse :",
-            'here_is_link_en': "Here is the desired link :",
-            'final_url': final_url, }
+        params_template = DICT_PARAMS_URL_OK
+        params_template['final_url'] = final_url
 
     return render_template('template.html', **params_template)
