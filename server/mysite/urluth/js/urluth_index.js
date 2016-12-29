@@ -97,7 +97,7 @@ var elem_text_countdown = document.getElementById("text-countdown");
 elem_text_countdown.addEventListener("click", function() {
     clearInterval(periodic_exec_redirection);
     var elem_to_change = document.getElementById("text-countdown");
-    elem_to_change.innerHTML = "+oo";
+    elem_to_change.innerHTML = "+&infin;";
 });
 
 
