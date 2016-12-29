@@ -14,12 +14,3 @@ def build_dict_urls(bigstring_urls):
     return final_urls_from_key_urls
 
 final_urls_from_key_urls = build_dict_urls(bigstring_urls)
-
-
-def main():
-    print(final_urls_from_key_urls)
-
-if __name__ == "__main__":
-    # REC TODO : ne marchera pas à cause des imports bizarres en python, que
-    # à chaque fois j'y comprends rien et je dois retrouver comment c'est fait.
-    main()
