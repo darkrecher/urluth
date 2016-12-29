@@ -68,8 +68,6 @@ RECTODO : doc d'installation dans pythonanywhere, et éventuellement de test en 
 
 RECTODO : doc de conception, mais très rapide. (expliquer le coup de la secret key)
 
-RECTODO : voir si y'a pas de la doc que j'ai laissé et qu'il faudrait mettre dans ce repo.
-
 RECTODO : remplacer le signe "+oo"
 
 RECTODO : changer les guillemets double en simple, partout où il faut.
