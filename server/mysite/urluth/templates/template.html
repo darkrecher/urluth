@@ -11,6 +11,12 @@
     body {
         width: 100%; margin: 0; font-size: 1em; background-color: #000;
     }
+    .intro-phrase-placement {
+        float:left; display:inline;
+    }
+    .intro-phrase-margin {
+        margin:0;
+    }
     .lang-button-placement {
         float:right; display:inline; margin: 5px;
     }
@@ -54,15 +60,21 @@
   <!-- +++++++++++++++ Haut de page +++++++++++++++ -->
   <!-- Boutons de changement de langue, lien principal, affichage décompte avant redirection. -->
 
+  <div class="clear-both">
+
+  <div class="intro-phrase-placement">
+    <p class="lang-fr intro-phrase-margin">{{here_is_link_fr}}</p>
+    <p class="lang-en intro-phrase-margin hidden">{{here_is_link_en}}</p>
+  </div>
+
   <div class="lang-button-placement">
-    <img src="img/drapalfr.png" width="38" id="flag-fr" class="clickable">
-    <img src="img/drapalen.png" width="38" id="flag-en" class="clickable">
+    <img src="img/drapalfr.png" width="38" height="28" id="flag-fr" class="clickable">
+    <img src="img/drapalen.png" width="38" height="28" id="flag-en" class="clickable">
+  </div>
   </div>
 
   <div class="clear-both">
 
-    <p class="lang-fr">{{here_is_link_fr}}</p>
-    <p class="lang-en hidden">{{here_is_link_en}}</p>
     <div class="emphasized-text">
       <a id="final-url" href="{{final_url}}">{{final_url}}</a>
     </div>

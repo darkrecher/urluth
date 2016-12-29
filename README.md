@@ -72,6 +72,4 @@ RECTODO : remplacer le signe "+oo"
 
 RECTODO : changer les guillemets double en simple, partout où il faut.
 
-RECTODO : mettre la première ligne de texte et les drapeaux sur la même ligne, pour avoir un peu plus de place pour foutre des bannières 468*60.
-
 RECTODO : revérifier les TODO restants dans le code. Mais normalement y'a plus.
