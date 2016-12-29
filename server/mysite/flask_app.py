@@ -1,7 +1,8 @@
+from secret_key import APP_SECRET_KEY
 from flask import Flask, url_for
 
 app = Flask(__name__)
-app.secret_key = 'This is really unique and secret, ou pas'
+app.secret_key = APP_SECRET_KEY
 
 try:
     from expressionotron.appexpr import app_expressionotron
