@@ -1,5 +1,10 @@
 // Gestion du changement de la langue français/anglais
 
+// http://stackoverflow.com/questions/5898656/test-if-an-element-contains-a-class#5898748
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
 function change_lang(language)
 {
     var classes_en;
@@ -16,17 +21,28 @@ function change_lang(language)
 
     // http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript
     // C'est moche, car je redéfinis toutes les classes au lieu de juste enlever/ajouter le hidden.
+    // Et en plus je rajoute parfois une classe en dur à l'arrache ('intro-phrase-margin').
     // Mais je veux pas me prendre la tête avec du code compliqué de regex ou de jquery.
     // C'est pas non plus le projet du siècle.
     var texts_en = document.getElementsByClassName('lang-en');
     for (var i=0; i<texts_en.length; i++)
     {
+        var has_class_suppl = hasClass(texts_en[i], 'intro-phrase-margin');
         texts_en[i].className = classes_en;
+        if (has_class_suppl)
+        {
+            texts_en[i].className += ' intro-phrase-margin';
+        }
     }
     var texts_fr = document.getElementsByClassName('lang-fr');
     for (var i=0; i<texts_fr.length; i++)
     {
+        var has_class_suppl = hasClass(texts_fr[i], 'intro-phrase-margin');
         texts_fr[i].className = classes_fr;
+        if (has_class_suppl)
+        {
+            texts_fr[i].className += ' intro-phrase-margin';
+        }
     }
 
 }
