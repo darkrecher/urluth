@@ -17,17 +17,19 @@ Dans la version actuelle du projet, toutes les publicités affichées permettent
 Ce site effectue la même tâche (en moins bien) que coinUrl. J'ai souhaité me faire une alternative à coinUrl car ils sont lent à envoyer les bitcoins que je gagne chez eux, qu'ils n'ont jamais répondu à ma demande de support, et qu'ils m'avaient accidentellement banni. Pour plus de détails, : https://recher.wordpress.com/2016/01/27/coinurl-mmmppfffeeeuaarrgh/
 
 
-## Installation
+## Installation actuelle en production
 
 Le site fonctionne sur un serveur Flask.
 
-Il est actuellement installé sur la plate-forme d'hébergement pythonanywhere, à l'adresse : http://recher.pythonanywhere.com/
+Il est actuellement en production sur la plate-forme d'hébergement pythonanywhere, à l'adresse : [http://recher.pythonanywhere.com/](http://recher.pythonanywhere.com/), mais le code n'est pas exactement le même.
 
-Le code dans ce repository n'est pas le même que celui dans pythonanywhere.
+Pythonanywhere héberge deux applications différente, chacune dans un "Blueprint" : urluth, et expressionotron (https://github.com/darkrecher/expressionotron).
 
-Il y a deux applications différentes dans pythonanywhere : urluth, et expressionotron (https://github.com/darkrecher/expressionotron).
+Ce repository contient uniquement le code de l'application urluth, ainsi que le fichier python principal `repo_git/urluth/server/mysite/flask_app.py`.
 
-Ces deux applications sont chacune dans un "Blueprints". Le code du fichier d'entrée `repo_git/urluth/server/mysite/flask_app.py` peut être lancé même si l'une des deux applications est manquante. Il devrait donc être possible d'exécuter le code de ce repository tel quel, dans un environnement autre que pythonanywhere. (Ça a été plus ou moins testé, mais pas en détail).
+## Exécution en local
+
+Voir : [doc/exec_en_local.md](doc/exec_en_local.md)
 
 
 ## Configuration dans l'hébergeur PythonAnywhere
