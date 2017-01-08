@@ -29,19 +29,19 @@ L'arborescence est la suivante :
             - `flask_app.py` : fichier principal du site. Correspond à [repo_git/server/mysite/flask_app.py](../server/mysite/flask_app.py)
             - `secret_key.py` : fichier contenant la clé secrète du site. Non versionné (le fichier dans ce repository contient une clé par défaut).
             - `twitCron.py` : fichier non versionné dans ce repository. Utilisé par l'application expressionotron. Facultatif.
-        + `.bashrc` : créé par pythonanywhere. Correspond à [repo_git/server/.bashrc](../server/.bashrc.txt)
-        + `.gitconfig` : créé par pythonanywhere. Correspond à [repo_git/server/.gitconfig](../server/.gitconfig.txt)
-        + `.profile` : créé par pythonanywhere. Correspond à [repo_git/server/.profile](../server/.profile.txt)
+        + `.bashrc` : créé par pythonanywhere. Correspond à [repo_git/server/.bashrc.txt](../server/.bashrc.txt)
+        + `.gitconfig` : créé par pythonanywhere. Correspond à [repo_git/server/.gitconfig.txt](../server/.gitconfig.txt)
+        + `.profile` : créé par pythonanywhere. Correspond à [repo_git/server/.profile.txt](../server/.profile.txt)
         + `.pythonstartup.py` : créé par pythonanywhere. Correspond à [repo_git/server/.pythonstartup.py](../server/.pythonstartup.py)
-        + `.vimrc` : créé par pythonanywhere. Correspond à [repo_git/server/.vimrc](../server/.vimrc.txt)
+        + `.vimrc` : créé par pythonanywhere. Correspond à [repo_git/server/.vimrc.txt](../server/.vimrc.txt)
         + `README.txt` : créé par pythonanywhere. Correspond à [repo_git/server/README.txt](../server/README.txt)
 
-Les fichiers à la racine du site : `.bashrc`, `.gitconfig`, `.profile`, `.vimrc` sont enregistré avec l'extension `.txt` dans le repository, mais n'ont pas d'extension dans pythonanywhere. Je travaille sous Windows et on ne peut pas créer de fichier commençant par un point et n'ayant pas d'extension. Désolé.
+Les fichiers à la racine du site : `.bashrc`, `.gitconfig`, `.profile`, `.vimrc` sont enregistré avec l'extension `.txt` dans le repository, alors qu'ils n'en ont pas dans pythonanywhere. Je travaille sous Windows et on ne peut pas créer de fichier commençant par un point et n'ayant pas d'extension. Désolé.
 
 
 ## Configuration du site
 
-La config se fait dans l'onglet "Web" de pythonanywhere.
+La config se fait dans l'onglet "Web".
 
 ![screenshot de la configuration pythonanywhere](screenshot_prod_conf.png)
 
@@ -81,14 +81,14 @@ Aucune
 
 ## Tâches planifiées
 
-Les tâches planifiées sont configurées dans l'onglet "Schedule" de pythonanywhere.
+Les tâches planifiées sont configurées dans l'onglet "Schedule".
 
 Il y en a une, mais elle est pour l'application expressionotron. Elle n'est donc pas décrite dans la doc de ce repository.
 
 
 ## Bases de données
 
-Configurées dans l'onglet "Databases" de pythonanywhere.
+Configurées dans l'onglet "Databases".
 
 Mais il n'y a aucule base de données.
 
