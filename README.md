@@ -34,7 +34,7 @@ Voir : [doc/exec_en_local.md](doc/exec_en_local.md)
 
 ## Configuration dans l'hébergeur PythonAnywhere
 
-RECTODO : à compléter.
+Voir : [doc/mise_en_prod_pythonanywhere.md](doc/mise_en_prod_pythonanywhere.md)
 
 
 ## Document de conception
@@ -61,9 +61,5 @@ J'accepte les dons en diverses crypto-monnaies.
 
 
 ## Restant à faire
-
-RECTODO : exporter/écrire/screenshotter la config de pythonanywhere
-
-RECTODO : doc d'installation dans pythonanywhere, et éventuellement de test en local.
 
 RECTODO : doc de conception, mais très rapide. (expliquer le coup de la secret key)

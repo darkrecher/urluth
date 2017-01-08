@@ -1,6 +1,6 @@
 # Mise en production du site dans pythonanywhere.com
 
-Il n'y a rien d'automatisé. La mise à jour des fichiers de code et la configuration des liens vers les fichiers statiquest doit être faite manuellement.
+Il n'y a rien d'automatisé. La mise à jour des fichiers et de la configuration doit être faite manuellement.
 
 
 ## Création du compte
@@ -18,23 +18,25 @@ L'arborescence est la suivante :
 
  - `/home/`
     * `Recher/`
-        + `.ipython`/ : répertoire non versionné. Créé par pythonanywhere. Non modifié.
+        + `.ipython`/ : non versionné. Créé par pythonanywhere. Non modifié.
         + `.local/`
-            - `bin/` : répertoire non versionné. Créé par pythonanywhere. Non modifié.
+            - `bin/` : non versionné. Créé par pythonanywhere. Non modifié.
         + `Dropbox/` : répertoire vide
         + `mysite/`
-            - `__pycache__/` : répertoire non versionné. Géré automatiquement par le python.
-            - `expressionotron/` : répertoire non versionné dans ce repository. Correspond à l'autre application. Facultatif.
-            - `urluth/` : répertoire contenant l'application. Correspond au répertoire [repo_git/server/mysite/urluth](../server/mysite/urluth)
+            - `__pycache__/` : non versionné. Géré automatiquement par le python.
+            - `expressionotron/` : non versionné dans ce repo. Correspond à l'autre application. Facultatif.
+            - `urluth/` : contient l'application. Correspond au répertoire [repo_git/server/mysite/urluth](../server/mysite/urluth)
             - `flask_app.py` : fichier principal du site. Correspond à [repo_git/server/mysite/flask_app.py](../server/mysite/flask_app.py)
             - `secret_key.py` : fichier contenant la clé secrète du site. Non versionné (le fichier dans ce repository contient une clé par défaut).
             - `twitCron.py` : fichier non versionné dans ce repository. Utilisé par l'application expressionotron. Facultatif.
-        + `.bashrc` : créé par pythonanywhere. Correspond à [repo_git/server/.bashrc](../server/.bashrc)
-        + `.gitconfig` : créé par pythonanywhere. Correspond à [repo_git/server/.gitconfig](../server/.gitconfig)
-        + `.profile` : créé par pythonanywhere. Correspond à [repo_git/server/.profile](../server/.profile)
+        + `.bashrc` : créé par pythonanywhere. Correspond à [repo_git/server/.bashrc](../server/.bashrc.txt)
+        + `.gitconfig` : créé par pythonanywhere. Correspond à [repo_git/server/.gitconfig](../server/.gitconfig.txt)
+        + `.profile` : créé par pythonanywhere. Correspond à [repo_git/server/.profile](../server/.profile.txt)
         + `.pythonstartup.py` : créé par pythonanywhere. Correspond à [repo_git/server/.pythonstartup.py](../server/.pythonstartup.py)
-        + `.vimrc` : créé par pythonanywhere. Correspond à [repo_git/server/.vimrc](../server/.vimrc)
+        + `.vimrc` : créé par pythonanywhere. Correspond à [repo_git/server/.vimrc](../server/.vimrc.txt)
         + `README.txt` : créé par pythonanywhere. Correspond à [repo_git/server/README.txt](../server/README.txt)
+
+Les fichiers à la racine du site : `.bashrc`, `.gitconfig`, `.profile`, `.vimrc` sont enregistré avec l'extension `.txt` dans le repository, mais n'ont pas d'extension dans pythonanywhere. Je travaille sous Windows et on ne peut pas créer de fichier commençant par un point et n'ayant pas d'extension. Désolé.
 
 
 ## Configuration du site
