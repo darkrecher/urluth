@@ -6,9 +6,14 @@ Le Blueprint urluth contient une seule page, générée dynamiquement. Selon la 
 
 L'autre application (expressionotron) contient une page et une tâche planifiée. Elles ne sont pas décrites dans cette documentation.
 
+
 ## flask_app.py
 
-Fichier principal du site. Il effectue les actions suivantes :
+Fichier principal du site.
+
+### Démarrage du serveur
+
+Lors de l'exécution de ce fichier, les actions suivantes sont effectuées :
 
  - Tentative d'importation du Blueprint "expressionotron". Cette tentative est exécutée dans un bloc try-except. Si le Blueprint n'est pas présent (impossible de trouver et d'importer les fichiers python), l'exécution ne se bloque pas. La variable `app_expressionotron` contient le Blueprint chargé, ou None si ça a échoué.
 
@@ -18,17 +23,30 @@ Fichier principal du site. Il effectue les actions suivantes :
 
  - Enregistrement du Blueprint `app_urluth`, si celui-ci est défini, avec le préfixe d'url `urluth`.
 
- - exécution de la fonction `generate_main_page`, qui effectue les actions suivantes :
+ - Lancement de l'application pour démarrer le serveur.
 
-     + Début de la génération d'une page html toute simple.
+L'application doit avoir une "secret key" pour fonctionner. C'est une chaîne de caractère qui peut contenir un peu ce qu'on veut. Je ne sais pas exactement à quoi ça sert, je suppose que c'est pour la sécurité, le HTTPS ou quelque chose comme ça. Cette secret key est importée depuis le fichier `secret_key.py`. Il y a une version de ce fichier dans ce repository, mais la secret key qu'il contient n'est bien évidemment pas celle qui est réellement utilisée sur pythonanywhere. La vraie version de ce fichier n'est pas disponible publiquement.
 
-     + Si le Blueprint `app_expressionotron` existe, ajout d'un lien dans la page html, permettant d'aller à la page principale de l'expressionotron.
 
-     + Si le Blueprint `app_urluth` existe, ajout d'un lien dans la page html, permettant d'aller à la page principale d'urluth.
+### Construction et renvoi de la page de présentation du site
 
-     + Renvoi de la page html simple, sous forme d'une chaîne de caractères.
+D'autre part, ce fichier contient la fonction `generate_main_page`, qui est appelée lorsqu'il faut répondre à une requête HTTP sur l'url racine du site (juste un slash, sans préfixe). Cette fonction effectue les actions suivantes :
 
-(TODO : exemple)
+ - Début de la génération d'une page html toute simple.
+
+ - Si le Blueprint `app_expressionotron` existe, ajout d'un lien dans la page html, permettant d'aller à la page principale de l'expressionotron. L'url du lien est construite de façon à pointer vers la page unique de l'expressionotron.
+
+ - Si le Blueprint `app_urluth` existe, ajout d'un lien dans la page html, permettant d'aller à la page unique d'urluth.
+
+ - Renvoi de la page html simple, sous forme d'une chaîne de caractères.
+
+Exemple de code HTML renvoyé (lorsque les deux Blueprints sont présents) :
+
+    Il n'y a pas grand-chose ici. Vous pouvez juste :<br/>
+     - <a href="/expressionotron/">cliquez ici pour aller &agrave; l'expressionotron</a><br/>
+     - <a href="/urluth/">cliquez ici pour consulter urluth</a><br/>
+
+Pas de balise `html`, `body`, `head`, etc. C'est vraiment au plus simple.
 
 
 ## appurluth.py
