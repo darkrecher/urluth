@@ -6,6 +6,7 @@ Le Blueprint urluth contient une seule page, générée dynamiquement. Selon la 
 
 L'autre application (expressionotron) contient une page et une tâche planifiée. Elles ne sont pas décrites dans cette documentation.
 
+Tous les fichiers mentionnés dans cette documentation se trouve dans `repo_git/urluth/server/mysite`, ce chemin de base n'est donc pas mentionné à chaque fichier.
 
 ## flask_app.py
 
@@ -49,13 +50,26 @@ Exemple de code HTML renvoyé (lorsque les deux Blueprints sont présents) :
 Pas de balise `html`, `body`, `head`, etc. C'est vraiment au plus simple.
 
 
-## appurluth.py
+## urluth/appurluth.py
 
-## build\_dict\_urls.py
+Fichier principal de l'application urluth. Il crée le Blueprint `app_urluth`.
 
-## templates/template.html
+Ce fichier contient une seule fonction censée répondre à une requête HTTP : `urluthGet`. L'url de routage est l'url racine (juste un slash), mais concrètement, avec le préfixe défini dans `flask_app.py`, la fonction est appelé sur l'url "/urluth".
 
-## js/urluth\_index.js
+La page web renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template.html`.
+
+La fonction `urluthGet` vérifie le paramètre `u` de la requête HTTP. Il doit exister et sa valeur doit correspondre à une clé du dictionnaire `final_urls_from_key_urls`. Dans tous les cas, c'est le même template HTML qui est utilisé. Mais en fonction de la clé existante ou pas, les textes envoyés au moteur de template pour générer la page web sont différents.
+
+Si le paramètre est une clé, les textes dans le template indiquent qu'on a bien trouvé le lien correspondant. Ils sont dans le dictionnaire de constantes `DICT_PARAMS_URL_OK`. Le lien se trouve dans la valeur dans le dictionnaire `final_urls_from_key_urls` correspondant à la clé. Ce lien est également utilisé dans le template.
+
+Si le paramètre est inexistant ou n'est pas à une clé, les textes dans le template indiquent que le lientn'a pas été trouvé. Ils sont dans le dictionnaire de constantes `DICT_PARAMS_URL_NOT_FOUND`. Le lien utilisé dans le template est un lien par défaut : "http://recher.wordpress.com".
+
+
+## urluth/build\_dict\_urls.py
+
+## urluth/templates/template.html
+
+## urluth/js/urluth\_index.js
 
 
 
