@@ -65,9 +65,93 @@ Si le paramètre est une clé, les textes dans le template indiquent qu'on a bie
 Si le paramètre est inexistant ou n'est pas à une clé, les textes dans le template indiquent que le lientn'a pas été trouvé. Ils sont dans le dictionnaire de constantes `DICT_PARAMS_URL_NOT_FOUND`. Le lien utilisé dans le template est un lien par défaut : "http://recher.wordpress.com".
 
 
-## urluth/build\_dict\_urls.py
+## urluth/build\_dict\_urls.py, urluth/data\_urls.py
+
+`data_urls.py` contient une seule grande chaîne de caractère multi-ligne : `bigstring_urls`. (Le format de donnée a été choisie comme ça, car c'est ce qui est le plus simple à mettre à jour).
+
+Chaque ligne de `bigstring_urls` est une correspondance entre une valeur possible du paramètre `u` de la requête HTTP, et une url (les lignes vides ne sont pas prises en compte). Ce sont ces urls qui sont affichées dans la page web de l'application.
+
+Le paramètre `u` et l'url doivent être séparé par un ou plusieurs espaces.
+
+Le fichier `build_dict_urls.py` lit la donnée `bigstring_urls` pour créer le dictionnaire `final_urls_from_key_urls`, avec pour clé le paramètre `u` et pour valeur l'url.
+
+Il n'y a pas de contrôle sur l'unicité des clés. Si `bigstring_urls` contient plusieurs fois le même paramètre `u`, c'est le dernier de chaque qui sera pris en compte.
+
 
 ## urluth/templates/template.html
+
+Il s'agit du fichier de template utilisé pour générer la page unique de urluth, avec les éléments suivants :
+
+ - des publicités diverses.
+ - une url sur laquelle l'utilisateur est censé cliquer. S'il ne clique pas, au bout de 50 secondes, une redirection automatique est effectuée vers cette url. Le compteur peut être arrêté en cliquant sur le nombre indiquant le temps restant.
+ - divers textes de blabla.
+ - deux boutons permettant de changer le langage des textes (français ou anglais).
+
+### Fichiers additionnels
+
+En dehors de ce qui est imposé par les encarts publicitaires (voir chapitre suivant), le template contient une référence vers 3 fichiers :
+
+ - `urluth/img/drapalfr.png` : image du drapeau français. Utilisé comme bouton pour mettre la page en français.
+ - `urluth/img/drapalen.png` : pareil, mais c'est le drapeau anglais.
+ - `urluth/js/urluth\_index.js` : définit les comportements interactifs de la page.
+
+Le CSS est intégré dans le template HTML (C'est plus simple, puisqu'il n'y a qu'une page).
+
+### Éléments imposés par les encarts publicitaires
+
+Les parties de HTML suivantes sont à insérer telle quelle dans la page, au bon endroit (voir documentation des sites à publicité respectifs)
+
+#### Adbit :
+
+`<meta name="adbit-site-verification" content="8844b9f937c9c2d0a196f3d1e3775f524593b6f4ba886b4bddd4d353cd65af36" />`
+
+`<script type="text/javascript" src="https://adbit.co/js/show_ads.js"></script>`
+
+`<div class="adbit-display-ad" data-adspace-id="754F5AE8F1"></div>`
+
+#### Anonymous ads :
+
+`<iframe data-aa='273455' src='https://ad.a-ads.com/273455?size=468x60' scrolling='no' style='width:468px; height:60px; border:0px; padding:0;overflow:hidden' allowtransparency='true' frameborder='0'></iframe>`
+
+`<iframe data-aa='143164' src='https://ad.a-ads.com/143164?size=300x250' scrolling='no' style='width:300px; height:250px; border:0px; padding:0;overflow:hidden' allowtransparency='true' frameborder='0'></iframe>`
+
+#### Blockadz
+
+    <center>
+      <div>
+        <iframe scrolling="no" src="//blockadz.com/ads/show/show.php?a=E1GPX7V6IJNOA&b=7WVAHMEV3AEJJ" style="overflow:hidden;width:468px;height:60px;" frameborder="0"></iframe>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://blockadz.com/?a=BuyAds&id=E1GPX7V6IJNOA" target="_blank">Advertise in this spot</a>
+      </div>
+    </center>
+
+    <center>
+      <div>
+        <iframe scrolling="no" src="//blockadz.com/ads/show/show.php?a=E1GPX7V6IJNOA&b=HYXVT2VFEZD35" style="overflow:hidden;width:300px;height:250px;" frameborder="0"></iframe>
+      </div>
+      <div style="text-align:center;">
+        <a href="https://blockadz.com/?a=BuyAds&id=E1GPX7V6IJNOA" target="_blank">Advertise in this spot</a>
+      </div>
+    </center>
+
+#### Coinhits
+
+`<iframe src="http://coinhits.com/ad/pbnr2.php?ref=563" marginwidth="0" marginheight="0" width="468" height="60" scrolling="no" border="0" frameborder="0"></iframe>`
+
+#### Coinmedia
+
+`<iframe src="http://coinmedia.co/new_code_site23973.js" scrolling="no" frameborder="0" width="468px" height="90px"></iframe>`
+
+### Gestion du changement de langue
+
+
+
+### Affichage du décompte restant
+
+### Placement des publicités
+
+
 
 ## urluth/js/urluth\_index.js
 
