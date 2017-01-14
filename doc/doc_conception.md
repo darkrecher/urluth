@@ -174,5 +174,46 @@ Il y a deux encarts côte à côte, puis deux autres en dessous et ainsi de suit
 
 ## urluth/js/urluth\_index.js
 
+Il y a déjà quelques commentaires dans le code qui aide à comprendre.
 
+Comme le projet est très simple, c'est du javascript pur. Pas de jQuery ni quoi que ce soit d'autre.
+
+### Gestion du changement de langue
+
+Fonction `hasClass` : fonction générique, avec deux paramètres : `element`, `cls`. Renvoie true si l'élément HTML `element` possède la classe `cls`
+
+Fonction `change_lang`. Modifie les textes de la page pour mettre en anglais ou en français, en fonction du paramètre `language` (chaîne de caractère). `language='en'` : anglais. `language=<n'importe quoi d'autre>` : français.
+
+Le but de cette fonction (dans le cas où il faut mettre en français) est d'ajouter la classe `hidden` sur tous les éléments HTML ayant la classe `lang-fr`, et d'enlever cette classe `hidden` sur tous ceux ayant la classe `lang-fr`. Dans le cas où il faut mettre en anglais, c'est le contraire.
+
+En javascript pur, il n'y a pas de moyen simple pour enlever une classe à un élément. Il faut réécrire toutes les classes, sauf celle qu'on veut enlever. C'est ce que le code de la fonction fait. Sauf que ça pose un petit problème.
+
+Au début de la phrase se trouve le texte "voici le lien qui vous intéresse", qui change en fonction de la langue, comme tous les autres. Sauf que pour la bonne disposition dans la page, la balise contenant ce texte doit avoir une classe supplémentaire : `intro-phrase-margin`.
+
+Lorsqu'on réécrit toutes les classes pour changer la langue, il faut vérifier si au départ cette classe `intro-phrase-margin` est présente ou non. Si elle l'est, elle est re-rajoutée. Et uniquement cette classe là, les autres éventuelles classes supplémentaires ne sont pas gérées.
+
+Par conséquent, le code de la fonction `change_lang` n'est pas générique du tout. Si on a besoin d'avoir d'autres classes dans des éléments qui changent selon la langue, ça ne marchera plus du tout. Mais on ne va pas se prendre la tête plus que ça pour ce projet.
+
+Le code juste après la fonction `change_lang` est exécuté dès le chargement du fichier javascript. Il associe l'exécution de cette fonction (avec le bon paramètre à chaque fois) aux deux images de drapeaux français et anglais qui sont en haut à droite de la page.
+
+La fonction `is_browser_french` utilise les paramètres du navigateur pour déterminer si la langue courante de l'utilisateur est le français ou "autre chose". Elle renvoie True si c'est français, False sinon. (C'est une fonction un peu chauvine).
+
+Cette fonction n'est pas générique. Si un jour on veut une troisième langue, il faudra refaire cette fonction, mais on n'en est pas là.
+
+Le code juste après la fonction `is_browser_french` est également exécuté dès le chargement. Il exécute la fonction, et si le résultat est False (navigateur pas en français), il exécute la fonction `change_lang('en)` pour mettre en anglais.
+
+### Gestion de la décompte du temps et redirection automatique
+
+Le nombre de secondes restant avant la redirection vers l'url finale est stocké dans la variable globale `seconds_left`
+
+Fonction `redirection_countdown`. Cette fonction diminue de 10 secondes la variable `seconds_left`, et réactualise le texte dans la page affichant ce décompte. L'élément HTML affichant ce texte est identifié par l'attribut `id=text-countdown`.
+
+Cette fonction vérifie également la valeur de `seconds_left`. Lorsqu'elle atteint 0, la fonction récupère la valeur de l'attribut `href` de l'élément `final-url` (c'est à dire l'url vers laquelle l'utilisateur est censé aller). Et ensuite, la fonction indique au navigateur web qu'il faut aller à cette url.
+
+La ligne de code juste après la fonction `redirection_countdown` déclenche un appel périodique (toutes les 10 secondes) de cette même fonction. Cette appel périodique est stocké dans une variable globale `periodic_exec_redirection`. Cette création d'appel périodique est effectuée dès le chargement du fichier javascript (donc dès le chargement de la page).
+
+Le code qui vient après définit le comportement lorsqu'on clique sur l'élément HTML `text-countdown` (l'élément affichant le décompte). Ce comportement est directement implémenté par une espèce de fonction inline (je ne sais pas si ça s'appelle comme ça en javascript). Deux actions sont effectuées :
+
+ - arrêt de l'appel périodique précédemment défini, en désactivant la variable `periodic_exec_redirection`,
+ - modification du texte dans l'élément `text-countdown`, en le remplaçant par "+∞".
 
