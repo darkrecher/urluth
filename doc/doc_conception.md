@@ -145,12 +145,31 @@ Les parties de HTML suivantes sont à insérer telle quelle dans la page, au bon
 
 ### Gestion du changement de langue
 
+Il n'y a que deux langues et une seule page. Le changement de langue a donc été fait au plus simple.
 
+Lorsque le fichier html final est généré, il contient déjà tous les textes des deux langues différentes. Les textes anglais possèdent la classe `lang-en`, les français la classe `lang-fr`. La langue par défaut est le français. Au départ, toutes les balises HTML ayant la classe `lang-en` sont invisibles (elles ont la classe `hidden`).
+
+Lorsqu'on clique sur l'un ou l'autre des boutons de langue, on enlève/ajoute la classe `hidden` aux balises de texte, pour rendre visible ceux d'une langue et pas ceux de l'autre.
+
+C'est donc tout géré localement par le client web. Il n'y a pas besoins de requêtes supplémentaires vers le serveur lors d'un changement de langue. C'est clairement pas comme ça qu'il faut faire pour des "vrais" sites. Mais dans notre cas, c'est tout à fait adapté.
 
 ### Affichage du décompte restant
 
+L'affichage est effectué par la balise HTML ayant l'identifiant `text-countdown` :
+
+    <span id="text-countdown" class="clickable">
+      50
+    </span>
+
+Le temps initial est de 50 secondes. Le temps restant est réactualisé toutes les 10 secondes. Lorsqu'on clique sur le temps restant, le décompte s'arrête et la valeur affichée est : +∞ ("plus l'infini").
+
+Tous ces comportements sont gérés par le javascript (voir : `urluth/js/urluth\_index.js`).
+
 ### Placement des publicités
 
+Tous les encarts publicitaires sont dans une balise `<div>` ayant la classe `ad-placement`. Cette classe est associé à du CSS permettant de placer les encarts les uns à côté des autres.
+
+Il y a deux encarts côte à côte, puis deux autres en dessous et ainsi de suite. Chaque couple d'encarts est placé dans une autre balise `<div>`, ayant la classe `clear-both`. Le CSS de cette classe fait placer les éléments en-dessous et non pas côte à côte. Les autres éléments de la page (le texte en haut, celui en bas, etc.) sont également répartis dans des `<div>` avec `clear-both`. En gros, c'est ce qu'on doit mettre quand on veut aller à la ligne.
 
 
 ## urluth/js/urluth\_index.js
