@@ -1,12 +1,13 @@
 # Document de conception
 
-Bon c'est assez simple, au départ il n'y a qu'une seule page web : la page de présentation contenant les liens vers les applications (en Flask, ça s'appelle des [Blueprints](http://flask.pocoo.org/docs/0.12/blueprints/)).
+La page de présentation est toute simple, pas de JS ni de CSS. Elle contient les liens vers les applications qui ont pu être chargées (en Flask, ça s'appelle des [Blueprints](http://flask.pocoo.org/docs/0.12/blueprints/)).
 
-Le Blueprint urluth contient une seule page, générée dynamiquement. Selon la valeur indiquée en paramètre, la page affiche un lien vers un autre site. Elle contient également des publicités, c'est le but principal.
+Le Blueprint urluth contient une seule page, générée dynamiquement. Selon la valeur indiquée en paramètre, la page affiche un lien vers un autre site (dans la suite de ce document, ce lien est appelé "url finale", parce que c'est là où l'utilisateur veut se rendre). La page contient également des publicités, c'est le but principal.
 
-L'autre application (expressionotron) contient une page et une tâche planifiée. Elles ne sont pas décrites dans cette documentation.
+L'autre Blueprint (expressionotron) contient une page et une tâche planifiée. Elles ne sont pas décrites dans cette documentation.
 
 Tous les fichiers mentionnés dans cette documentation se trouve dans `repo_git/urluth/server/mysite`, ce chemin de base n'est donc pas mentionné à chaque fichier.
+
 
 ## flask_app.py
 
@@ -16,30 +17,29 @@ Fichier principal du site.
 
 Lors de l'exécution de ce fichier, les actions suivantes sont effectuées :
 
- - Tentative d'importation du Blueprint "expressionotron". Cette tentative est exécutée dans un bloc try-except. Si le Blueprint n'est pas présent (impossible de trouver et d'importer les fichiers python), l'exécution ne se bloque pas. La variable `app_expressionotron` contient le Blueprint chargé, ou None si ça a échoué.
+ - Tentative d'importation du Blueprint "expressionotron" et stockage dans la variable `app_expressionotron`. Cette tentative est exécutée dans un bloc try-except. Si le Blueprint n'est pas présent (impossible de trouver ou d'importer les fichiers python), l'exécution ne se bloque pas, mais `app_expressionotron` vaut None.
 
- - Si le chargement a réussi, enregistrement du Blueprint dans le site, avec le préfixe d'url `expressionotron`. Ce qui veut dire que toutes les requêtes HTTP commençant par ce préfixe seront redirigées vers ce Blueprint (le préfixe est préalablement enlevé de l'url de la requête avant d'être envoyée au Blueprint).
+ - Si le chargement a réussi, enregistrement du Blueprint dans le site, avec le préfixe d'url `expressionotron`. Ce qui veut dire que toutes les requêtes HTTP commençant par ce préfixe seront redirigées vers ce Blueprint.
 
- - Même principe avec le Blueprint "urluth". La variable `app_urluth` contient ce Blueprint, ou None si l'import a échoué.
+ - Même principe avec urluth. La variable `app_urluth` contient le Blueprint "urluth", ou None si l'import a échoué.
 
- - Enregistrement du Blueprint `app_urluth`, si celui-ci est défini, avec le préfixe d'url `urluth`.
+ - Si `app_urluth` ne vaut pas None, enregistrement du Blueprint dans le site, avec le préfixe d'url `urluth`.
 
  - Lancement de l'application pour démarrer le serveur.
 
-L'application doit avoir une "secret key" pour fonctionner. C'est une chaîne de caractère qui peut contenir un peu ce qu'on veut. Je ne sais pas exactement à quoi ça sert, je suppose que c'est pour la sécurité, le HTTPS ou quelque chose comme ça. Cette secret key est importée depuis le fichier `secret_key.py`. Il y a une version de ce fichier dans ce repository, mais la secret key qu'il contient n'est bien évidemment pas celle qui est réellement utilisée sur pythonanywhere. La vraie version de ce fichier n'est pas disponible publiquement.
-
+L'application doit avoir une "secret key" pour fonctionner. C'est une chaîne de caractère contenant ce qu'on veut. Je ne sais pas exactement à quoi ça sert, je suppose que c'est pour la sécurité, le HTTPS ou quelque chose comme ça. Cette secret key est importée depuis le fichier `secret_key.py`. Il y a une version de ce fichier dans ce repository, qui n'est bien évidemment pas la même que celle qui est réellement utilisée sur pythonanywhere. La vraie secret key n'est pas disponible publiquement.
 
 ### Construction et renvoi de la page de présentation du site
 
-D'autre part, ce fichier contient la fonction `generate_main_page`, qui est appelée lorsqu'il faut répondre à une requête HTTP sur l'url racine du site (juste un slash, sans préfixe). Cette fonction effectue les actions suivantes :
+D'autre part, le fichier `flask_app.py` contient la fonction `generate_main_page`, qui est appelée lorsqu'il faut répondre à une requête HTTP sur l'url racine du site (juste un slash, sans préfixe). Cette fonction effectue les actions suivantes :
 
- - Début de la génération d'une page html toute simple.
+ - Début de la génération d'une page HTML toute simple.
 
- - Si le Blueprint `app_expressionotron` existe, ajout d'un lien dans la page html, permettant d'aller à la page principale de l'expressionotron. L'url du lien est construite de façon à pointer vers la page unique de l'expressionotron.
+ - Si le Blueprint `app_expressionotron` existe, écriture d'un lien dans la page HTML. L'url de ce lien est construite de façon à pointer vers la page unique de l'expressionotron.
 
- - Si le Blueprint `app_urluth` existe, ajout d'un lien dans la page html, permettant d'aller à la page unique d'urluth.
+ - Si le Blueprint `app_urluth` existe, écriture d'un autre lien dans la page HTML, permettant d'aller à la page unique d'urluth.
 
- - Renvoi de la page html simple, sous forme d'une chaîne de caractères.
+ - Renvoi de la page, sous forme d'une chaîne de caractères.
 
 Exemple de code HTML renvoyé (lorsque les deux Blueprints sont présents) :
 
@@ -54,26 +54,26 @@ Pas de balise `html`, `body`, `head`, etc. C'est vraiment au plus simple.
 
 Fichier principal de l'application urluth. Il crée le Blueprint `app_urluth`.
 
-Ce fichier contient une seule fonction censée répondre à une requête HTTP : `urluthGet`. L'url de routage est l'url racine (juste un slash), mais concrètement, avec le préfixe défini dans `flask_app.py`, la fonction est appelé sur l'url "/urluth".
+Ce fichier contient une seule fonction `urluthGet`, censée répondre à une requête HTTP ayant l'url "/" (url racine). Dans les faits, l'url de départ est "/urluth". Le fichier `flask_app.py` l'intercepte et détecte la présence du préfixe. Ce préfixe est supprimé, puis la requête est transmise à `app_urluth`. L'url résultante est donc l'url racine, qui est interceptée par `urluthGet`.
 
-La page web renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template.html`.
+La page HTML renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template.html`.
 
 La fonction `urluthGet` vérifie le paramètre `u` de la requête HTTP. Il doit exister et sa valeur doit correspondre à une clé du dictionnaire `final_urls_from_key_urls`. Dans tous les cas, c'est le même template HTML qui est utilisé. Mais en fonction de la clé existante ou pas, les textes envoyés au moteur de template pour générer la page web sont différents.
 
-Si le paramètre est une clé, les textes dans le template indiquent qu'on a bien trouvé le lien correspondant. Ils sont dans le dictionnaire de constantes `DICT_PARAMS_URL_OK`. Le lien se trouve dans la valeur dans le dictionnaire `final_urls_from_key_urls` correspondant à la clé. Ce lien est également utilisé dans le template.
+Si le paramètre `u` est bien une clé, les textes envoyés au template sont ceux du dictionnaire de constantes `DICT_PARAMS_URL_OK`. Le lien (l'url finale) se trouve dans le dictionnaire `final_urls_from_key_urls`, il s'agit de la valeur dont la clé est le paramètre `u`. Cette url finale est également envoyée au template.
 
-Si le paramètre est inexistant ou n'est pas à une clé, les textes dans le template indiquent que le lientn'a pas été trouvé. Ils sont dans le dictionnaire de constantes `DICT_PARAMS_URL_NOT_FOUND`. Le lien utilisé dans le template est un lien par défaut : "http://recher.wordpress.com".
+Si le paramètre `u` est inexistant ou n'est pas une clé, les textes envoyés au template sont ceux du dictionnaire de constantes `DICT_PARAMS_URL_NOT_FOUND`, ils indiquent que le lien n'a pas été trouvé. L'url finale envoyée au template est un lien par défaut : "http://recher.wordpress.com".
 
 
 ## urluth/build\_dict\_urls.py, urluth/data\_urls.py
 
-`data_urls.py` contient une seule grande chaîne de caractère multi-ligne : `bigstring_urls`. (Le format de donnée a été choisie comme ça, car c'est ce qui est le plus simple à mettre à jour).
+`data_urls.py` contient une seule grande chaîne de caractère multi-ligne : `bigstring_urls`. Ce format de donnée a été choisi, car c'est ce qui est le plus simple à mettre à jour.
 
-Chaque ligne de `bigstring_urls` est une correspondance entre une valeur possible du paramètre `u` de la requête HTTP, et une url (les lignes vides ne sont pas prises en compte). Ce sont ces urls qui sont affichées dans la page web de l'application.
+Chaque ligne de `bigstring_urls` est une correspondance entre une valeur possible du paramètre `u` de la requête HTTP, et une url finale affichée dans la page web. Les lignes vides ne sont pas prises en compte.
 
-Le paramètre `u` et l'url doivent être séparé par un ou plusieurs espaces.
+Le paramètre `u` et l'url doivent être séparés par un ou plusieurs espaces.
 
-Le fichier `build_dict_urls.py` lit la donnée `bigstring_urls` pour créer le dictionnaire `final_urls_from_key_urls`, avec pour clé le paramètre `u` et pour valeur l'url.
+Le fichier `build_dict_urls.py` lit la donnée `bigstring_urls` pour créer le dictionnaire `final_urls_from_key_urls`. clé : paramètre `u`. valeur : url finale.
 
 Il n'y a pas de contrôle sur l'unicité des clés. Si `bigstring_urls` contient plusieurs fois le même paramètre `u`, c'est le dernier de chaque qui sera pris en compte.
 
@@ -83,7 +83,7 @@ Il n'y a pas de contrôle sur l'unicité des clés. Si `bigstring_urls` contient
 Il s'agit du fichier de template utilisé pour générer la page unique de urluth, avec les éléments suivants :
 
  - des publicités diverses.
- - une url sur laquelle l'utilisateur est censé cliquer. S'il ne clique pas, au bout de 50 secondes, une redirection automatique est effectuée vers cette url. Le compteur peut être arrêté en cliquant sur le nombre indiquant le temps restant.
+ - l'url finale sur laquelle l'utilisateur est censé cliquer. S'il n'a pas cliqué au bout de 50 secondes, une redirection automatique est effectuée vers cette url. Le compteur peut être arrêté en cliquant sur le nombre indiquant le temps restant.
  - divers textes de blabla.
  - deux boutons permettant de changer le langage des textes (français ou anglais).
 
@@ -92,14 +92,14 @@ Il s'agit du fichier de template utilisé pour générer la page unique de urlut
 En dehors de ce qui est imposé par les encarts publicitaires (voir chapitre suivant), le template contient une référence vers 3 fichiers :
 
  - `urluth/img/drapalfr.png` : image du drapeau français. Utilisé comme bouton pour mettre la page en français.
- - `urluth/img/drapalen.png` : pareil, mais c'est le drapeau anglais.
- - `urluth/js/urluth\_index.js` : définit les comportements interactifs de la page.
+ - `urluth/img/drapalen.png` : pareil, mais drapeau anglais.
+ - `urluth/js/urluth_index.js` : fichier javascript définissant les comportements interactifs de la page.
 
-Le CSS est intégré dans le template HTML (C'est plus simple, puisqu'il n'y a qu'une page).
+Le CSS est intégré dans le template HTML. C'est pas génial, mais c'est le plus simple, puisqu'il n'y a qu'une page.
 
 ### Éléments imposés par les encarts publicitaires
 
-Les parties de HTML suivantes sont à insérer telle quelle dans la page, au bon endroit (voir documentation des sites à publicité respectifs)
+Les parties de HTML suivantes sont à insérer telle quelle dans la page, au bon endroit (voir documentation respectives des sites à publicité)
 
 #### Adbit :
 
@@ -147,7 +147,7 @@ Les parties de HTML suivantes sont à insérer telle quelle dans la page, au bon
 
 Il n'y a que deux langues et une seule page. Le changement de langue a donc été fait au plus simple.
 
-Lorsque le fichier html final est généré, il contient déjà tous les textes des deux langues différentes. Les textes anglais possèdent la classe `lang-en`, les français la classe `lang-fr`. La langue par défaut est le français. Au départ, toutes les balises HTML ayant la classe `lang-en` sont invisibles (elles ont la classe `hidden`).
+Lorsque le fichier HTML est généré, il contient déjà tous les textes des deux langues différentes. Les balises HTML des textes anglais possèdent la classe `lang-en`, les balises du français possèdent la classe `lang-fr`. La langue par défaut est le français. Au départ, toutes les balises HTML ayant la classe `lang-en` sont invisibles (elles ont la classe `hidden`).
 
 Lorsqu'on clique sur l'un ou l'autre des boutons de langue, on enlève/ajoute la classe `hidden` aux balises de texte, pour rendre visible ceux d'une langue et pas ceux de l'autre.
 
