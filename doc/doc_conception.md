@@ -151,7 +151,7 @@ Lorsque le fichier HTML est généré, il contient déjà tous les textes des de
 
 Lorsqu'on clique sur l'un ou l'autre des boutons de langue, on enlève/ajoute la classe `hidden` aux balises de texte, pour rendre visible ceux d'une langue et pas ceux de l'autre.
 
-C'est donc tout géré localement par le client web. Il n'y a pas besoins de requêtes supplémentaires vers le serveur lors d'un changement de langue. C'est clairement pas comme ça qu'il faut faire pour des "vrais" sites. Mais dans notre cas, c'est tout à fait adapté.
+C'est donc tout géré localement par le client web. Il n'y a pas besoin d'échanges avec le serveur lors d'un changement de langue. C'est clairement pas comme ça qu'il faut faire pour des vrais sites. Mais dans notre cas, c'est tout à fait adapté.
 
 ### Affichage du décompte restant
 
@@ -161,20 +161,20 @@ L'affichage est effectué par la balise HTML ayant l'identifiant `text-countdown
       50
     </span>
 
-Le temps initial est de 50 secondes. Le temps restant est réactualisé toutes les 10 secondes. Lorsqu'on clique sur le temps restant, le décompte s'arrête et la valeur affichée est : +∞ ("plus l'infini").
+Le temps initial est de 50 secondes, il est réactualisé toutes les 10 secondes. Lorsqu'on clique sur le temps restant, le décompte s'arrête et la valeur affichée est : +∞ ("plus l'infini").
 
-Tous ces comportements sont gérés par le javascript (voir : `urluth/js/urluth\_index.js`).
+Tous ces comportements sont gérés par le javascript (voir : `urluth/js/urluth_index.js`).
 
 ### Placement des publicités
 
 Tous les encarts publicitaires sont dans une balise `<div>` ayant la classe `ad-placement`. Cette classe est associé à du CSS permettant de placer les encarts les uns à côté des autres.
 
-Il y a deux encarts côte à côte, puis deux autres en dessous et ainsi de suite. Chaque couple d'encarts est placé dans une autre balise `<div>`, ayant la classe `clear-both`. Le CSS de cette classe fait placer les éléments en-dessous et non pas côte à côte. Les autres éléments de la page (le texte en haut, celui en bas, etc.) sont également répartis dans des `<div>` avec `clear-both`. En gros, c'est ce qu'on doit mettre quand on veut aller à la ligne.
+Il y a deux encarts côte à côte, puis deux autres en dessous et ainsi de suite. Chaque couple d'encarts est placé dans une autre balise `<div>`, ayant la classe `clear-both`. Le CSS de cette classe fait placer les éléments en-dessous et non pas côte à côte. Les autres éléments de la page (le texte en haut, celui en bas, etc.) sont également répartis dans des `<div>` avec `clear-both`. En gros, quand on veut aller à la ligne, on met un `clear-both`.
 
 
 ## urluth/js/urluth\_index.js
 
-Il y a déjà quelques commentaires dans le code qui aide à comprendre.
+Il y a déjà quelques commentaires dans le code qui aident à comprendre.
 
 Comme le projet est très simple, c'est du javascript pur. Pas de jQuery ni quoi que ce soit d'autre.
 
@@ -188,31 +188,31 @@ Le but de cette fonction (dans le cas où il faut mettre en français) est d'ajo
 
 En javascript pur, il n'y a pas de moyen simple pour enlever une classe à un élément. Il faut réécrire toutes les classes, sauf celle qu'on veut enlever. C'est ce que le code de la fonction fait. Sauf que ça pose un petit problème.
 
-Au début de la phrase se trouve le texte "voici le lien qui vous intéresse", qui change en fonction de la langue, comme tous les autres. Sauf que pour la bonne disposition dans la page, la balise contenant ce texte doit avoir une classe supplémentaire : `intro-phrase-margin`.
+Au début de la page se trouve le texte "voici le lien qui vous intéresse", qui change en fonction de la langue, comme tous les autres. Sauf que pour la bonne disposition dans la page, la balise contenant ce texte doit avoir une classe supplémentaire : `intro-phrase-margin`.
 
-Lorsqu'on réécrit toutes les classes pour changer la langue, il faut vérifier si au départ cette classe `intro-phrase-margin` est présente ou non. Si elle l'est, elle est re-rajoutée. Et uniquement cette classe là, les autres éventuelles classes supplémentaires ne sont pas gérées.
+Lorsqu'on réécrit toutes les classes pour changer la langue, il faut vérifier si au départ cette classe `intro-phrase-margin` est présente ou non. Si elle l'est, elle est re-rajoutée. Ça marche uniquement avec cette classe là, d'autres éventuelles noms de classe ne seraient pas gérées.
 
 Par conséquent, le code de la fonction `change_lang` n'est pas générique du tout. Si on a besoin d'avoir d'autres classes dans des éléments qui changent selon la langue, ça ne marchera plus du tout. Mais on ne va pas se prendre la tête plus que ça pour ce projet.
 
 Le code juste après la fonction `change_lang` est exécuté dès le chargement du fichier javascript. Il associe l'exécution de cette fonction (avec le bon paramètre à chaque fois) aux deux images de drapeaux français et anglais qui sont en haut à droite de la page.
 
-La fonction `is_browser_french` utilise les paramètres du navigateur pour déterminer si la langue courante de l'utilisateur est le français ou "autre chose". Elle renvoie True si c'est français, False sinon. (C'est une fonction un peu chauvine).
+La fonction `is_browser_french` utilise les paramètres du navigateur pour déterminer si la langue courante de l'utilisateur est le français ou une autre. Elle renvoie True si c'est français, False sinon. (C'est une fonction un peu chauvine).
 
-Cette fonction n'est pas générique. Si un jour on veut une troisième langue, il faudra refaire cette fonction, mais on n'en est pas là.
+Cette fonction n'est pas générique. Si un jour on veut une troisième langue, il faudra la refaire, mais on n'en est pas là.
 
 Le code juste après la fonction `is_browser_french` est également exécuté dès le chargement. Il exécute la fonction, et si le résultat est False (navigateur pas en français), il exécute la fonction `change_lang('en)` pour mettre en anglais.
 
 ### Gestion de la décompte du temps et redirection automatique
 
-Le nombre de secondes restant avant la redirection vers l'url finale est stocké dans la variable globale `seconds_left`
+Le nombre de secondes restant avant la redirection vers l'url finale est stocké dans la variable globale `seconds_left`.
 
-Fonction `redirection_countdown`. Cette fonction diminue de 10 secondes la variable `seconds_left`, et réactualise le texte dans la page affichant ce décompte. L'élément HTML affichant ce texte est identifié par l'attribut `id=text-countdown`.
+Fonction `redirection_countdown` : cette fonction diminue de 10 secondes la variable `seconds_left`, et réactualise le texte dans la page affichant ce décompte. L'élément HTML affichant ce texte est identifié par l'attribut `id=text-countdown`.
 
-Cette fonction vérifie également la valeur de `seconds_left`. Lorsqu'elle atteint 0, la fonction récupère la valeur de l'attribut `href` de l'élément `final-url` (c'est à dire l'url vers laquelle l'utilisateur est censé aller). Et ensuite, la fonction indique au navigateur web qu'il faut aller à cette url.
+Cette fonction vérifie également la valeur de `seconds_left`. Lorsque celle-ci atteint 0, la fonction récupère la valeur de l'attribut `href` de l'élément `final-url` (c'est à dire l'url vers laquelle l'utilisateur est censé aller), et elle indique au navigateur web qu'il faut aller à cette url.
 
-La ligne de code juste après la fonction `redirection_countdown` déclenche un appel périodique (toutes les 10 secondes) de cette même fonction. Cette appel périodique est stocké dans une variable globale `periodic_exec_redirection`. Cette création d'appel périodique est effectuée dès le chargement du fichier javascript (donc dès le chargement de la page).
+La ligne de code juste après la fonction `redirection_countdown` déclenche un appel périodique (toutes les 10 secondes) de cette même fonction. Cette appel périodique est stocké dans une variable globale `periodic_exec_redirection`. Cette création d'appel périodique est effectuée dès le chargement.
 
-Le code qui vient après définit le comportement lorsqu'on clique sur l'élément HTML `text-countdown` (l'élément affichant le décompte). Ce comportement est directement implémenté par une espèce de fonction inline (je ne sais pas si ça s'appelle comme ça en javascript). Deux actions sont effectuées :
+Le code qui vient après définit le comportement lorsqu'on clique sur l'élément HTML `text-countdown`. Ce comportement est directement implémenté par une espèce de fonction inline (je ne sais pas si ça s'appelle comme ça en javascript). Deux actions sont effectuées :
 
  - arrêt de l'appel périodique précédemment défini, en désactivant la variable `periodic_exec_redirection`,
  - modification du texte dans l'élément `text-countdown`, en le remplaçant par "+∞".
