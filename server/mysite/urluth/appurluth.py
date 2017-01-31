@@ -30,7 +30,7 @@ DICT_PARAMS_URL_NOT_FOUND = {
 }
 
 @app_urluth.route('/',  methods=['GET'])
-def urluthGet():
+def urluth_get():
 
     key_url = request.args.get('u', '')
     if not key_url.isalnum():

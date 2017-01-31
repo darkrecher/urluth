@@ -54,11 +54,11 @@ Pas de balise `html`, `body`, `head`, etc. C'est vraiment au plus simple.
 
 Fichier principal de l'application urluth. Il crée le Blueprint `app_urluth`.
 
-Ce fichier contient une seule fonction `urluthGet`, censée répondre à une requête HTTP ayant l'url "/" (url racine). Dans les faits, l'url de départ est "/urluth". Le fichier `flask_app.py` l'intercepte et détecte la présence du préfixe. Ce préfixe est supprimé, puis la requête est transmise à `app_urluth`. L'url résultante est donc l'url racine, qui est interceptée par `urluthGet`.
+Ce fichier contient une seule fonction `urluth_get`, censée répondre à une requête HTTP ayant l'url "/" (url racine). Dans les faits, l'url de départ est "/urluth". Le fichier `flask_app.py` l'intercepte et détecte la présence du préfixe. Ce préfixe est supprimé, puis la requête est transmise à `app_urluth`. L'url résultante est donc l'url racine, qui est interceptée par `urluthGet`.
 
 La page HTML renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template.html`.
 
-La fonction `urluthGet` vérifie le paramètre `u` de la requête HTTP. Il doit exister et sa valeur doit correspondre à une clé du dictionnaire `final_urls_from_key_urls`. Dans tous les cas, c'est le même template HTML qui est utilisé. Mais en fonction de la clé existante ou pas, les textes envoyés au moteur de template pour générer la page web sont différents.
+La fonction `urluth_get` vérifie le paramètre `u` de la requête HTTP. Il doit exister et sa valeur doit correspondre à une clé du dictionnaire `final_urls_from_key_urls`. Dans tous les cas, c'est le même template HTML qui est utilisé. Mais en fonction de la clé existante ou pas, les textes envoyés au moteur de template pour générer la page web sont différents.
 
 Si le paramètre `u` est bien une clé, les textes envoyés au template sont ceux du dictionnaire de constantes `DICT_PARAMS_URL_OK`. Le lien (l'url finale) se trouve dans le dictionnaire `final_urls_from_key_urls`, il s'agit de la valeur dont la clé est le paramètre `u`. Cette url finale est également envoyée au template.
 
