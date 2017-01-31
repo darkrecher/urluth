@@ -27,7 +27,7 @@ def generate_main_page(app_expressionotron, app_urluth):
     if app_expressionotron is not None:
         html_strings.append(
             " - <a href=\"%s\">cliquez ici pour aller &agrave; l'expressionotron</a><br/>")
-        urls.append(url_for('app_expressionotron.expressionotronGet'))
+        urls.append(url_for('app_expressionotron.expressionotron_get'))
 
     if app_urluth is not None:
         html_strings.append(
@@ -47,4 +47,10 @@ def mainPage():
 
 
 if __name__ == '__main__':
+    debug_mode = False
+    # http://stackoverflow.com/questions/17743019/flask-logging-cannot-get-it-to-write-to-a-file
+    # https://docs.python.org/2/howto/logging.html#changing-the-format-of-displayed-messages
+    import logging
+    if debug_mode:
+        logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
     app.run(debug=False)
