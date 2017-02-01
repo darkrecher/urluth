@@ -45,4 +45,4 @@ def urluth_get():
         params_template = DICT_PARAMS_URL_OK
         params_template['final_url'] = final_url
 
-    return render_template('template.html', **params_template)
+    return render_template('template_urluth.html', **params_template)

@@ -56,7 +56,7 @@ Fichier principal de l'application urluth. Il crée le Blueprint `app_urluth`.
 
 Ce fichier contient une seule fonction `urluth_get`, censée répondre à une requête HTTP ayant l'url "/" (url racine). Dans les faits, l'url de départ est "/urluth". Le fichier `flask_app.py` l'intercepte et détecte la présence du préfixe. Ce préfixe est supprimé, puis la requête est transmise à `app_urluth`. L'url résultante est donc l'url racine, qui est interceptée par `urluthGet`.
 
-La page HTML renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template.html`.
+La page HTML renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template_urluth.html`.
 
 La fonction `urluth_get` vérifie le paramètre `u` de la requête HTTP. Il doit exister et sa valeur doit correspondre à une clé du dictionnaire `final_urls_from_key_urls`. Dans tous les cas, c'est le même template HTML qui est utilisé. Mais en fonction de la clé existante ou pas, les textes envoyés au moteur de template pour générer la page web sont différents.
 
@@ -78,7 +78,7 @@ Le fichier `build_dict_urls.py` lit la donnée `bigstring_urls` pour créer le d
 Il n'y a pas de contrôle sur l'unicité des clés. Si `bigstring_urls` contient plusieurs fois le même paramètre `u`, c'est le dernier de chaque qui sera pris en compte.
 
 
-## urluth/templates/template.html
+## urluth/templates/template_urluth.html
 
 Il s'agit du fichier de template utilisé pour générer la page unique de urluth, avec les éléments suivants :
 
