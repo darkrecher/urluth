@@ -54,7 +54,7 @@ Pas de balise `html`, `body`, `head`, etc. C'est vraiment au plus simple.
 
 Fichier principal de l'application urluth. Il crée le Blueprint `app_urluth`.
 
-Ce fichier contient une seule fonction `urluth_get`, censée répondre à une requête HTTP ayant l'url "/" (url racine). Dans les faits, l'url de départ est "/urluth". Le fichier `flask_app.py` l'intercepte et détecte la présence du préfixe. Ce préfixe est supprimé, puis la requête est transmise à `app_urluth`. L'url résultante est donc l'url racine, qui est interceptée par `urluthGet`.
+Ce fichier contient une seule fonction `urluth_get`, censée répondre à une requête HTTP ayant l'url "/" (url racine). Dans les faits, l'url de départ est "/urluth". Le fichier `flask_app.py` l'intercepte et détecte la présence du préfixe. Ce préfixe est supprimé, puis la requête est transmise à `app_urluth`. L'url résultante est donc l'url racine, qui est interceptée par `urluth_get`.
 
 La page HTML renvoyée est générée avec le moteur de template "jinja2", intégré à Flask. Le fichier de template utilisé est `urluth/templates/template_urluth.html`.
 

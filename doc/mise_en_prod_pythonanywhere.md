@@ -90,5 +90,5 @@ Il y en a une, mais elle est pour l'application expressionotron. Elle n'est donc
 
 Configurées dans l'onglet "Databases".
 
-Mais il n'y a aucule base de données.
+Mais il n'y a aucune base de données.
 
