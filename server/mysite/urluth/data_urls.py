@@ -181,4 +181,17 @@ je    http://www.gamekult.com/jeux/image-stellar-overload-SU3050244235-ME3050779
 jf    https://github.com/malko/cpold
 jg    https://technet.microsoft.com/en-us/sysinternals/zoomit.aspx
 
+ka    http://sametmax.com/les-mensonges-des-dsl/
+kb    http://sametmax.com/dites-non-aux-dsl/
+kc    http://20100.pagesperso-orange.fr/contenu/herald_partitions.htm
+kd    http://guy.joly1.free.fr/heraldique_description_des_blasons.html
+ke    http://blasons.free.fr/heraldique/herald_ex.php
+kf    http://blasons.free.fr/heraldique/lecture.html#pressigny
+kg    http://www.encyclopedie-universelle.net/abaque-architecture3-grece-rome.html
+kh    https://fr.wikipedia.org/wiki/Th%C3%A9orie_des_graphes
+ki    https://fr.wiktionary.org/wiki/Cat%C3%A9gorie:Th%C3%A9orie_des_graphes_en_fran%C3%A7ais
+kj    https://repl.it/G268/0
+kk    http://dantes5thcircle.deviantart.com/art/Lime-Base-Set-59512128
+kl    http://rpg.uplink.fi/heraldry/
+
 """
