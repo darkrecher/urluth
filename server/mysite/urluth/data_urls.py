@@ -194,4 +194,11 @@ kj    https://repl.it/G268/0
 kk    http://dantes5thcircle.deviantart.com/art/Lime-Base-Set-59512128
 kl    http://rpg.uplink.fi/heraldry/
 
+la    https://jacquesyvesmartin.com/sans-droit-ni-loi/
+lb    https://jacquesyvesmartin.com/la-deuxieme-enquete-de-boris-thibert/
+lc    https://fr.pinterest.com/pin/388998486542250474/
+ld    http://www.2busty.net/2015/detective-nadine-jansen-hitomi-tanaka/
+le    https://fr.wikipedia.org/wiki/Chiffrement#Terminologie
+lf    https://www.howtogeek.com/203708/3-alternatives-to-the-now-defunct-truecrypt-for-your-encryption-needs/
+
 """
