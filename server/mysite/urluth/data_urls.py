@@ -201,4 +201,13 @@ ld    http://www.2busty.net/2015/detective-nadine-jansen-hitomi-tanaka/
 le    https://fr.wikipedia.org/wiki/Chiffrement#Terminologie
 lf    https://www.howtogeek.com/203708/3-alternatives-to-the-now-defunct-truecrypt-for-your-encryption-needs/
 
+ma    http://bbwlover.net/dawn-perignon-measuring-massive-jugg/
+mb    https://xkcd.com/1638/
+mc    https://www.abebooks.fr/Oeuf-Paques-Dauphinois-Ditelet-Fantaisiste-d%C3%A9di%C3%A9/11240515644/bd
+mg    https://en.wikipedia.org/wiki/EBCDIC
+mh    https://fr.wikipedia.org/wiki/Bug_de_l'an_2038
+
+na    https://www.facebook.com/Parti-Pirate-Grolandais-167128036813116/
+nb    http://www.primecurves.com/ashley-sage-ellison-pirate/
+
 """
