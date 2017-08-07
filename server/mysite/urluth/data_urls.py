@@ -210,4 +210,10 @@ mh    https://fr.wikipedia.org/wiki/Bug_de_l'an_2038
 na    https://www.facebook.com/Parti-Pirate-Grolandais-167128036813116/
 nb    http://www.primecurves.com/ashley-sage-ellison-pirate/
 
+oa    https://www.youtube.com/watch?v=whp2Y_MjTXs
+ob    https://www.youtube.com/watch?v=EDqCQScMvj8
+oc    https://www.youtube.com/watch?v=6HKjYgd3Z4k
+od    https://classicreload.com/commander-keen-4-secret-of-the-oracle.html
+oe    https://dead-cells.com/
+of    http://fr.sex.com/pin/8378211-miina-kanno/
 """
