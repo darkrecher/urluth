@@ -216,4 +216,18 @@ oc    https://www.youtube.com/watch?v=6HKjYgd3Z4k
 od    https://classicreload.com/commander-keen-4-secret-of-the-oracle.html
 oe    https://dead-cells.com/
 of    http://fr.sex.com/pin/8378211-miina-kanno/
+
+pa    https://twitter.com/themercedesxxx/status/586236910097530880
+pb    https://www.youtube.com/watch?v=-5C-ZxUj4tc
+
+qa    http://www.cnetfrance.fr/produits/logiciels-controle-parental-39807617.htm
+qb    https://fr.yahoo.com/
+qc    https://forums.yahoo.net/t5/Manage-your-account-settings/unable-to-create-a-yahoo-ca-account/td-p/38699
+qd    https://family.norton.com/web/?ULang=fra
+qe    http://www.ww1propaganda.com/ww1-poster/are-you-saving-children-save-their-education-and-give-them-start-life-buy-war-savings-cer
+qf    http://www.japemonster.com/statistics-about-us-30-pics/funny-graphs-use-of-my-email-address
+qg    http://lotuspocusfocus.com/2013/02/edge-of-the-world-ireland/
+qh    https://www.imaginarium.mx/peluche-kiconico-red-kiconico-red-75223.htm
+qi    http://ravepad.com/page/cherm/images/view/23340742/Chelsea-Charms-144645
+
 """
