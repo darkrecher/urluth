@@ -230,4 +230,27 @@ qg    http://lotuspocusfocus.com/2013/02/edge-of-the-world-ireland/
 qh    https://www.imaginarium.mx/peluche-kiconico-red-kiconico-red-75223.htm
 qi    http://ravepad.com/page/cherm/images/view/23340742/Chelsea-Charms-144645
 
+ra    https://www.smiletemplates.com/powerpoint-templates/fail-in-business/00061/
+rb    https://www.ouest-france.fr/pays-de-la-loire/chateaubriant-44110/rosalie-solaire-nouveau-moyen-de-transport-ecolo-chateaubriant-4506334
+rc    https://webdesign.tutsplus.com/articles/what-you-may-not-know-about-the-z-index-property--webdesign-16892
+rd    http://imgarcade.com/sexist-pictures.html
+re    http://www.notrecinema.com/communaute/v1_detail_film.php3?lefilm=25677
+rf    http://www.actuabd.com/Bob-Morane-Renaissance-les
+rg    http://www.bsmpg.com/Blog/bid/52969/The-Puke-Bucket
+rh    https://www.recyclart.org/2016/05/radiator-lounge-seat-cnc-music-factory/
+ri    https://www.dramafever.com/drama/4786/To_Be_Continued/
+rj    http://www.dailymail.co.uk/femail/article-2936392/Who-s-laughing-Whitney-Thore-27-stone-star-Fat-Girl-Dancing-YouTube-video-says-s-happier-given-TV-show.html
+rk    http://www.stemulate.org/2013/03/26/student-engagement-competitions-stem-challenge/
+rl    https://fr.wikipedia.org/wiki/Wake-on-LAN
+
+sa    http://www.thatsweird.net/picture31.shtml
+sb    https://uxmag.com/articles/the-internet-of-things-and-the-mythical-smart-fridge
+sc    http://seriestv.centerblog.net/rub-Kaamelott.html
+sd    https://www.pinterest.fr/pin/369295238180276521/
+se    http://www.histoire-en-questions.fr/revolution-1789/1789-cahiers-doleances-nombre.html
+sf    https://img0.etsystatic.com/010/0/7230081/il_570xN.455914306_dcov.jpg
+sg    https://www.youtube.com/watch?v=QrEdYii5tLw
+sh    http://freakyuseless.com/2017/09/25/blue-eyed-girl/
+
 """
+
