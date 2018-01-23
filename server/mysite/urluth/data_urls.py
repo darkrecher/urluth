@@ -252,5 +252,19 @@ sf    https://img0.etsystatic.com/010/0/7230081/il_570xN.455914306_dcov.jpg
 sg    https://www.youtube.com/watch?v=QrEdYii5tLw
 sh    http://freakyuseless.com/2017/09/25/blue-eyed-girl/
 
+ta    http://1morecastle.com/2013/03/saved-by-the-frick/
+tb    https://commons.wikimedia.org/wiki/File:Carte-bepo-simple.svg
+tc    https://www.pcastuces.com/pratique/materiel/clavier_qwerty_azerty/page1.htm
+td    https://computertutorflorida.com/2009/03/most-extreme-ergonomic-keyboard/
+te    https://www.youtube.com/watch?v=1XNZsJkmoxI
+tf    https://bepo.fr/wiki/Accueil
+
+ua    https://recher.files.wordpress.com/2018/01/dessin_mooouu1.jpg
+ub    https://recher.files.wordpress.com/2018/01/dessin_drone_elec.jpg
+uc    https://recher.files.wordpress.com/2018/01/dessin_robot_cartographe.jpg
+ud    http://www.ianardo.com/hall5/angela.html
+ue    https://recher.files.wordpress.com/2018/01/dessin_mouche_03.jpg
+uf    https://recher.files.wordpress.com/2018/01/dessin_mouche.jpg
+
 """
 
