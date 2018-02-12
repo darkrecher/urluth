@@ -266,5 +266,8 @@ ud    http://www.ianardo.com/hall5/angela.html
 ue    https://recher.files.wordpress.com/2018/01/dessin_mouche_03.jpg
 uf    https://recher.files.wordpress.com/2018/01/dessin_mouche.jpg
 
+va    https://www.pinterest.fr/pin/561542647263677329/
+vb    https://www.youtube.com/watch?v=Aycj6Y6K2CA
+
 """
 
