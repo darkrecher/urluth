@@ -271,5 +271,17 @@ vb    https://www.youtube.com/watch?v=Aycj6Y6K2CA
 
 wa    https://www.pinterest.fr/pin/49680402125346351/
 
+xa   https://www.mynewshub.cc/utama-sensasi/lelaki-thai-ditahan-seludup-air-mani-untuk-wanita-gersang/
+xb   https://www.pinterest.fr/pin/246783254560865935/
+xc   https://cupidorcats.wordpress.com/2013/12/29/13-awkward-moments-when/
+xd   https://www.pinterest.fr/pin/74098356339546298/
+xe   http://kwangjae.com/453
+xf   http://www.jannorris.com/today-in-the-world-of-food-news/grill-recipes-bacon-explosion-bacon-weave-whatever-you-call-it-bacon-rules/
+xg   https://twitter.com/motiontwin/status/925377424346484738
+xh   https://www.pinterest.fr/pin/480196378996531998/
+xi   http://howtofailyourdrivingtest.blogspot.fr/2011/08/roundabout-of-doom.html
+xj   https://www.pinterest.fr/pin/574631233694372161/
+xk   https://www.gettyimages.co.uk/detail/video/group-of-happy-and-positive-business-people-celebrating-stock-footage/181846761
+
 """
 
