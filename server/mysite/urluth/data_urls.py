@@ -283,5 +283,8 @@ xi   http://howtofailyourdrivingtest.blogspot.fr/2011/08/roundabout-of-doom.html
 xj   https://www.pinterest.fr/pin/574631233694372161/
 xk   https://www.gettyimages.co.uk/detail/video/group-of-happy-and-positive-business-people-celebrating-stock-footage/181846761
 
+ya   http://www.dailymail.co.uk/news/article-2217218/Ole-Miss-crowns-African-American-homecoming-queen--50-years-university-ended-segregation.html?ito=feeds-newsxml
+yb   https://thegeckoking.deviantart.com/art/An-even-curvier-Jordan-Carver-709410378
+
 """
 
