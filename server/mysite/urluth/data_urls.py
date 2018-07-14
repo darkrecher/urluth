@@ -286,5 +286,23 @@ xk   https://www.gettyimages.co.uk/detail/video/group-of-happy-and-positive-busi
 ya   http://www.dailymail.co.uk/news/article-2217218/Ole-Miss-crowns-African-American-homecoming-queen--50-years-university-ended-segregation.html?ito=feeds-newsxml
 yb   https://thegeckoking.deviantart.com/art/An-even-curvier-Jordan-Carver-709410378
 
+za   http://kenh14.vn/cung-gap-go-nhung-nhan-vat-la-ky-nhat-cua-nam-2017-va-vo-so-cau-chuyen-dac-biet-ve-cuoc-doi-20171221172328185.chn
+zb   http://www.lonah.net/?q=node/133
+zc   http://www.uneparisiennesemerveille.com/2013/02/01/le-roi-se-meurt-ionesco-tnm-montreal/
+zd   https://orange.blender.org/background/
+ze   https://www.youtube.com/user/MastocStudio/videos?sort=dd&view=0&shelf_id=0
+zf   http://art9libre.tuxfamily.org/archives/author/eldreammachine
+zg   http://www.inlibroveritas.net/
+zh   http://tuxracer.sourceforge.net/
+zi   https://en.wikipedia.org/wiki/Quake_III_Arena
+zj   http://www.xbill.org/
+zk   http://web.archive.org/web/20060619144448/http://culturelibre.net:80/article.php3?id_article=330
+zl   https://fr.wikipedia.org/wiki/Ehma
+zm   https://lacrymosa.tuxfamily.org/
+zn   http://www.le-terrier.net/index2.html
+zo   http://www.lonah.net/?q=node/24
+zp   https://www.dropbox.com/s/itnirgtpwhec6xj/12%20Le%20roi%20se%20meurt.mp3?dl=0
+zq   https://framablog.org/2011/10/04/librologie-jamendo/
+
 """
 
