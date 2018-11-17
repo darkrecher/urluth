@@ -318,5 +318,13 @@ abg   https://www.theplace2.ru/photos/Mylene-Farmer-md104/pic-737357.html
 
 baa   https://theadipositivityproject.zenfolio.com/nypl/h4C6C9FFD#h4c7a9a85
 
+caa   https://i.pinimg.com/236x/4e/9b/01/4e9b011c07779ce815a20e2b846efe1b.jpg
+
+daa   https://workbloom.com/interview/how-to-brag-while-being-modest.aspx
+dab   https://images.wsj.net/im-6460?width=620&aspect_ratio=1.5
+dac   https://karlsj6.wordpress.com/2014/03/21/
+dad   https://www.memecenter.com/fun/2502257/never-fart-in-a-smart-small-car-never
+dae   https://www.blogdumoderateur.com/resultats-battledev-novembre-2018/
+
 """
 
