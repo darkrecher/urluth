@@ -325,6 +325,27 @@ dab   https://images.wsj.net/im-6460?width=620&aspect_ratio=1.5
 dac   https://karlsj6.wordpress.com/2014/03/21/
 dad   https://www.memecenter.com/fun/2502257/never-fart-in-a-smart-small-car-never
 dae   https://www.blogdumoderateur.com/resultats-battledev-novembre-2018/
+daf   https://www.dailystar.co.uk/real-life/391407/Plus-size-beauty-pageant
+
+eaa  https://jacquesyvesmartin.com/ode-a-caissa-un-polar-original-entre-paris-et-le-mexique/
+eab  http://www.lifedaily.com.cwpcdn.com/story/alien-enthusiast-disappears-without-a-trace-police-find-bizarre-evidence/
+eac  https://www.youtube.com/watch?v=XY1gfyME4Js
+ead  https://www.pinterest.fr/pin/459085755755560613
+
+faa  https://www.dailymail.co.uk/tvshowbiz/article-2277236/Biggest-Loser-star-Ajay-Rochester-wears-vest-telling-people-jealous--pushes-swimsuit-limit-dog-walk.html
+
+aca https://www.babelio.com/livres/Boileve-Poulpe-a-tout-faire/695590
+acb https://maze.fr/wp-content/uploads/2013/05/american-beauty-rose-rosse.jpg
+acc https://www.brothers-brick.com/2010/10/17/atomium-landmark-of-a-bygone-era/)
+acd http://profils-conso.com/infobesite/
+ace https://www.facebook.com/Roi-Heenok-Officiel-115787248500541/
+acf https://www.pinterest.fr/pin/252272016613135068/
+acg https://www.youtube.com/watch?v=H6NHr9OZIFE
+ach http://pixeljoint.com/pixelart/17545.htm
+aci https://www.andysbillard.ch/flipper/geraete/3159/scared-stiff-bally-1996-revidiert-flipperkasten
+acj https://www.kemifilani.com/2014/08/fatkini-women-of-all-shapes-show-off.html
+ack https://www.dailymail.co.uk/news/article-3409776/On-board-ghost-ship-Inside-eerie-wreckage-Costa-Concordia-four-years-luxury-cruise-liner-sank-killing-32-people.html
+acl https://scene360.com/art/30834/red-red-wine/
 
 """
 
